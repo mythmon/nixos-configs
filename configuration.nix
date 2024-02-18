@@ -1,17 +1,10 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+{ pkgs, home-manager, ... }:
 
-{ config, pkgs, ... }:
-
-let
-  hostname = "fractal";
-
-in {
+{
   imports = [ 
-    ./hardware/${hostname}.nix
+    home-manager.nixosModules.default
+    ./hardware/fractal.nix
     ./user.nix
-    <home-manager/nixos>
   ];
 
   # Bootloader.
@@ -23,7 +16,7 @@ in {
     };
   };
 
-  networking.hostName = hostname;
+  networking.hostName = "fractal";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Los_Angeles";
