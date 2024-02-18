@@ -68,6 +68,7 @@ in {
           firefox
           httpie
           ncdu
+          ripgrep
           pavucontrol
           spotify
         ];
