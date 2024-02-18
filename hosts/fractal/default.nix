@@ -1,13 +1,22 @@
-{ pkgs, home-manager, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ 
-    home-manager.nixosModules.default
-    ./hardware/fractal.nix
-    ./user.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
-  # Bootloader.
+  fileSystems = {
+    "/mnt/windows" = {
+      device = "/dev/disk/by-uuid/AC6095B66095882A";
+      fsType = "ntfs-3g";
+      options = [ "rw" "uid=1000" ];
+    };
+
+    "/mnt/data" = {
+      device = "/dev/disk/by-uuid/9290145090143D63";
+      fsType = "ntfs-3g";
+      options = [ "rw" "uid=1000" ];
+    };
+  };
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot = {
@@ -60,7 +69,6 @@
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "mythmon";
 
   # NOPASSWD for wheel
   security.sudo.wheelNeedsPassword = false;
@@ -82,28 +90,11 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   programs = {
     _1password.enable = true;
     _1password-gui.enable = true;
     fish.enable = true;
   };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

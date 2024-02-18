@@ -1,7 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, home-manager, ... }:
 
-{
-  users.users.mythmon = {
+let
+  login = "mythmon";
+in {
+  imports = [
+    home-manager.nixosModules.default
+  ];
+
+  users.users.${login} = {
     description = "Michael Cooper";
     extraGroups = [ "networkmanager" "wheel" ];
     isNormalUser = true;
@@ -10,10 +16,13 @@
 
   programs.steam.enable = true;
 
+  # Enable automatic login for the user.
+  services.xserver.displayManager.autoLogin.user = login;
+
   home-manager = {
     useGlobalPkgs = true;
 
-    users.mythmon = { pkgs, ... }: {
+    users.${login} = { pkgs, ... }: {
       programs = {
         fish = {
           enable = true;
@@ -53,7 +62,9 @@
         packages = with pkgs; [
           _1password
           _1password-gui
+          atlauncher
           discord 
+          fd
           firefox
           httpie
           ncdu
