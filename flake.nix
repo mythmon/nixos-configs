@@ -36,11 +36,16 @@
       inherit system;
       specialArgs = inputs;
       modules = [
-        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-stable ]; })
+        ({
+          config,
+          pkgs,
+          ...
+        }: {nixpkgs.overlays = [overlay-stable];})
         ./hosts/fractal
         ./modules/standard
         ./modules/main-user
         ./modules/roland-bridge-cast
+        ./modules/minecraft.nix
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
       ];
     };
