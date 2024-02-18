@@ -1,7 +1,10 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix 
+    ./nvidia.nix
+  ];
 
   fileSystems = {
     "/mnt/windows" = {
