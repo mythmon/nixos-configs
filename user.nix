@@ -72,6 +72,7 @@ in {
           pavucontrol
           spotify
           gnomeExtensions.tactile
+          gnomeExtensions.appindicator
         ];
         sessionVariables = {
           EDITOR="vim";
@@ -90,6 +91,13 @@ in {
         };
         "org/gnome/mutter" = {
           edge-tiling = false;
+        };
+      };
+
+      services = {
+        syncthing = {
+          enable = true;
+          tray.enable = true;
         };
       };
     };
