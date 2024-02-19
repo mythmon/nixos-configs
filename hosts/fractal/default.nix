@@ -53,6 +53,17 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  environment.gnome.excludePackages = with pkgs.gnome; [
+    epiphany
+    gnome-calendar
+    gnome-contacts
+    gnome-maps
+    gnome-weather
+    pkgs.gnome-connections
+    simple-scan
+    totem
+  ];
+
   services.xserver = {
     layout = "us";
     xkbVariant = "";
