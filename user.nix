@@ -65,6 +65,7 @@ in {
           atlauncher
           discord 
           fd
+          fira-code-nerdfont
           firefox
           httpie
           ncdu
