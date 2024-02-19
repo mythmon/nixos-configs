@@ -71,6 +71,7 @@ in {
           ripgrep
           pavucontrol
           spotify
+          gnomeExtensions.tactile
         ];
         sessionVariables = {
           EDITOR="vim";
@@ -78,6 +79,18 @@ in {
           VISUAL="code --wait";
         };
         stateVersion = "23.11";
+      };
+
+      dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          enable-hot-corners = false;
+        };
+        "org/gnome/desktop/wm/preferences" = {
+          num-workspaces = 1;
+        };
+        "org/gnome/mutter" = {
+          edge-tiling = false;
+        };
       };
     };
   };
