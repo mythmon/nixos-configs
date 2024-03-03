@@ -62,7 +62,6 @@ in {
         packages = with pkgs; [
           _1password
           _1password-gui
-          atlauncher
           discord 
           fd
           fira-code-nerdfont
