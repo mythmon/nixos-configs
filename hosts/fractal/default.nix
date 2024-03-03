@@ -1,10 +1,10 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, login, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix 
     ./nvidia.nix
-    ../../modules/roland-bridge-cast.nix
+    ../../modules/roland-bridge-cast
   ];
 
   fileSystems = {

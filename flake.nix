@@ -21,6 +21,12 @@
       modules = [
         ./hosts/fractal
         ./user.nix
+        ./modules/roland-bridge-cast
+        {
+          _module.args = {
+            login = "mythmon";
+          };
+        }
       ];
     };
   };
