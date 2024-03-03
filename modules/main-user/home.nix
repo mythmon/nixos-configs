@@ -44,10 +44,12 @@
     packages = with pkgs; [
       _1password
       _1password-gui
+      btop
       discord
       fd
       fira-code-nerdfont
       firefox
+      htop
       httpie
       ncdu
       ripgrep

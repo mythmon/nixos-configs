@@ -11,5 +11,5 @@
     nvidiaSettings = true; # accessible via `nvidia-settings`.
   };
 
-  environment.systemPackages = with pkgs; [glxinfo mesa-demos];
+  environment.systemPackages = with pkgs; [glxinfo mesa-demos nvtop];
 }
