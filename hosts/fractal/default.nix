@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix 
     ./nvidia.nix
+    ../../modules/roland-bridge-cast.nix
   ];
 
   fileSystems = {
@@ -71,9 +72,10 @@
 
   services.printing.enable = true;
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  sound.enable = false; # disable ALSA
+  hardware.pulseaudio.enable = false; # disable PulseAudio
+  # Pipewire is our one true audio daemon
   services.pipewire = {
     enable = true;
     alsa.enable = true;
