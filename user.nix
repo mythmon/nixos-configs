@@ -37,6 +37,8 @@ in {
           ];
         };
 
+        gh.enable = true;
+
         git = {
           enable = true;
           userEmail = "mythmon@gmail.com";
