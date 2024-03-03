@@ -13,19 +13,13 @@
   ];
 
   fileSystems = {
-    "/mnt/windows" = {
+    "/windows" = {
       device = "/dev/disk/by-uuid/AC6095B66095882A";
       fsType = "ntfs-3g";
       options = ["rw" "uid=1000"];
     };
 
-    "/mnt/data" = {
-      device = "/dev/disk/by-uuid/9290145090143D63";
-      fsType = "ntfs-3g";
-      options = ["rw" "uid=1000"];
-    };
-
-    "/mnt/d2" = {
+    "/data" = {
       device = "/dev/disk/by-uuid/EEFED3EFFED3ADD9";
       fsType = "ntfs-3g";
       options = ["rw" "uid=1000"];
