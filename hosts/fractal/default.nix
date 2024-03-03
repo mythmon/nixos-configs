@@ -24,6 +24,12 @@
       fsType = "ntfs-3g";
       options = ["rw" "uid=1000"];
     };
+
+    "/mnt/d2" = {
+      device = "/dev/disk/by-uuid/EEFED3EFFED3ADD9";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000"];
+    };
   };
 
   boot.loader = {
