@@ -20,7 +20,7 @@ in {
   config = lib.mkIf cfg.enable {
     users.users.${cfg.userName} = {
       description = "Michael Cooper";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
       isNormalUser = true;
       shell = pkgs.fish;
     };
