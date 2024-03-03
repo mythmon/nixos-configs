@@ -1,15 +1,15 @@
-{ pkgs, home-manager, ... }:
-
-let
+{
+  pkgs,
+  home-manager,
+  ...
+}: let
   login = "mythmon";
 in {
-  imports = [
-    home-manager.nixosModules.default
-  ];
+  imports = [home-manager.nixosModules.default];
 
   users.users.${login} = {
     description = "Michael Cooper";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     isNormalUser = true;
     shell = pkgs.fish;
   };
@@ -22,7 +22,7 @@ in {
   home-manager = {
     useGlobalPkgs = true;
 
-    users.${login} = { pkgs, ... }: {
+    users.${login} = {pkgs, ...}: {
       programs = {
         fish = {
           enable = true;
@@ -30,7 +30,10 @@ in {
             set fish_greeting # Disable greeting
           '';
           plugins = [
-            { name = "z"; src = pkgs.fishPlugins.z.src; }
+            {
+              name = "z";
+              src = pkgs.fishPlugins.z.src;
+            }
           ];
         };
 
@@ -62,7 +65,7 @@ in {
         packages = with pkgs; [
           _1password
           _1password-gui
-          discord 
+          discord
           fd
           fira-code-nerdfont
           firefox
@@ -75,23 +78,17 @@ in {
           gnomeExtensions.appindicator
         ];
         sessionVariables = {
-          EDITOR="vim";
+          EDITOR = "vim";
           NIXOS_OZONE_WL = "1";
-          VISUAL="code --wait";
+          VISUAL = "code --wait";
         };
         stateVersion = "23.11";
       };
 
       dconf.settings = {
-        "org/gnome/desktop/interface" = {
-          enable-hot-corners = false;
-        };
-        "org/gnome/desktop/wm/preferences" = {
-          num-workspaces = 1;
-        };
-        "org/gnome/mutter" = {
-          edge-tiling = false;
-        };
+        "org/gnome/desktop/interface".enable-hot-corners = false;
+        "org/gnome/desktop/wm/preferences".num-workspaces = 1;
+        "org/gnome/mutter".edge-tiling = false;
       };
 
       services = {

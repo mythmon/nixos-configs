@@ -7,21 +7,30 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
+    alejandra,
     ...
   }: {
-    nixosConfigurations.fractal = nixpkgs.lib.nixosSystem {
+    formatter.x86_64-linux = alejandra.defaultPackage.x86_64-linux;
+
+    nixosConfigurations.fractal = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
+        ./modules/standard
         ./hosts/fractal
         ./user.nix
         ./modules/roland-bridge-cast
+        {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         {
           _module.args = {
             login = "mythmon";

@@ -1,8 +1,13 @@
-{ config, lib, pkgs, modulesPath, login, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  login,
+  ...
+}: {
   imports = [
-    ./hardware-configuration.nix 
+    ./hardware-configuration.nix
     ./nvidia.nix
     ../../modules/roland-bridge-cast
   ];
@@ -11,13 +16,13 @@
     "/mnt/windows" = {
       device = "/dev/disk/by-uuid/AC6095B66095882A";
       fsType = "ntfs-3g";
-      options = [ "rw" "uid=1000" ];
+      options = ["rw" "uid=1000"];
     };
 
     "/mnt/data" = {
       device = "/dev/disk/by-uuid/9290145090143D63";
       fsType = "ntfs-3g";
-      options = [ "rw" "uid=1000" ];
+      options = ["rw" "uid=1000"];
     };
   };
 
@@ -97,12 +102,8 @@
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, use:
-  # https://search.nixos.org 
-  environment.systemPackages = with pkgs; [
-    efibootmgr
-    vim
-    wget
-  ];
+  # https://search.nixos.org
+  environment.systemPackages = with pkgs; [efibootmgr vim wget];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
