@@ -4,4 +4,9 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  main-user = {
+    enable = true;
+    userName = "mythmon";
+  };
 }

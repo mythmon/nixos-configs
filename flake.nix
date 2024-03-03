@@ -26,9 +26,9 @@
       system = "x86_64-linux";
       specialArgs = inputs;
       modules = [
-        ./modules/standard
         ./hosts/fractal
-        ./user.nix
+        ./modules/standard
+        ./modules/main-user
         ./modules/roland-bridge-cast
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         {
