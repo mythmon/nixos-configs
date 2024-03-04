@@ -60,6 +60,8 @@
       ripgrep
       pavucontrol
       spotify
+      steamcmd
+      steam-tui
       units
       gnomeExtensions.tactile
       gnomeExtensions.appindicator
