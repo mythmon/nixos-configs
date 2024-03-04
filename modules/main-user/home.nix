@@ -54,17 +54,19 @@
       fd
       fira-code-nerdfont
       firefox
+      gimp
+      gnomeExtensions.appindicator
+      gnomeExtensions.tactile
       htop
       httpie
+      krita
       ncdu
-      ripgrep
       pavucontrol
+      ripgrep
       spotify
-      steamcmd
       steam-tui
+      steamcmd
       units
-      gnomeExtensions.tactile
-      gnomeExtensions.appindicator
     ];
     sessionVariables = {
       EDITOR = "vim";
