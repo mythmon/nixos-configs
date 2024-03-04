@@ -60,6 +60,7 @@
       ripgrep
       pavucontrol
       spotify
+      units
       gnomeExtensions.tactile
       gnomeExtensions.appindicator
     ];
