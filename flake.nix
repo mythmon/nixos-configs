@@ -2,10 +2,10 @@
   description = "Mythmon's NixOS configurations";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     alejandra = {
@@ -16,15 +16,15 @@
 
   outputs = inputs @ {
     self,
+    nixpkgs-stable,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
     alejandra,
     ...
   }: let
     system = "x86_64-linux";
-    overlay-unstable = final: prev: {
-      unstable = import nixpkgs-unstable {
+    overlay-stable = final: prev: {
+      stable = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -36,7 +36,7 @@
       inherit system;
       specialArgs = inputs;
       modules = [
-        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-stable ]; })
         ./hosts/fractal
         ./modules/standard
         ./modules/main-user

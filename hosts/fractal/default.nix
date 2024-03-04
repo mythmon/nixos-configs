@@ -70,9 +70,9 @@
     totem
   ];
 
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   fonts.packages = with pkgs; [
@@ -116,7 +116,7 @@
 
   # List packages installed in system profile. To search, use:
   # https://search.nixos.org
-  environment.systemPackages = with pkgs; [efibootmgr vim wget unstable.keymapp];
+  environment.systemPackages = with pkgs; [efibootmgr vim wget keymapp];
 
   hardware.keyboard.zsa.enable = true;
 

@@ -3,3 +3,6 @@ switch:
 
 fmt:
   nix fmt
+
+boot:
+  sudo nixos-rebuild boot --flake '.#'
