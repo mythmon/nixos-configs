@@ -22,9 +22,15 @@
     gh.enable = true;
 
     git = {
+      diff-so-fancy.enable = true;
       enable = true;
       userEmail = "mythmon@gmail.com";
       userName = "Michael Cooper";
+
+      extraConfig = {
+        merge.conflictstyle = "diff3";
+        rerere.enable = true;
+      };
     };
 
     starship = {
