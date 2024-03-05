@@ -5,7 +5,7 @@
   system,
   ...
 }: {
-  home-manager.users.${config.main-user.username} = {pkgs, ...}: {
+  home-manager.users.${config.main-user.userName} = {pkgs, ...}: {
     home = {
       packages = with pkgs; [
         atlauncher

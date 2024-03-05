@@ -9,7 +9,7 @@
 in {
   options.main-user = {
     enable = lib.mkEnableOption "enable main-user module";
-    username = lib.mkOption {
+    userName = lib.mkOption {
       default = "mythmon";
       description = ''
         username of the main user
@@ -18,7 +18,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    users.users.${cfg.username} = {
+    users.users.${cfg.userName} = {
       description = "Michael Cooper";
       extraGroups = ["networkmanager" "wheel" "docker"];
       isNormalUser = true;
@@ -28,11 +28,11 @@ in {
     programs.steam.enable = true;
 
     # Enable automatic login for the user.
-    services.xserver.displayManager.autoLogin.user = cfg.username;
+    services.xserver.displayManager.autoLogin.user = cfg.userName;
 
     home-manager = {
       useGlobalPkgs = true;
-      users.${cfg.username} = import ./home.nix;
+      users.${cfg.userName} = import ./home.nix;
     };
   };
 }
