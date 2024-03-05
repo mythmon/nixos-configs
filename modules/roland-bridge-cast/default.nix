@@ -7,7 +7,7 @@
 
   imports = [home-manager.nixosModules.default];
 
-  home-manager.users.${config.main-user.userName}.home.file."pipewire-roland-bridge-cast" = {
+  home-manager.users.${config.main-user.username}.home.file."pipewire-roland-bridge-cast" = {
     source = ./90-roland-bridge-cast.conf;
     target = ".config/pipewire/pipewire.conf.d/90-roland-bridge-cast.conf";
     onChange = "systemctl --user restart pipewire";

@@ -7,6 +7,6 @@
 
   main-user = {
     enable = true;
-    userName = "mythmon";
+    username = "mythmon";
   };
 }
