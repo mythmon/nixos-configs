@@ -1,5 +1,5 @@
 # home-manager user config
-{pkgs, ...}: {
+{config, lib, pkgs, ...}: {
   programs = {
     direnv = {
       enable = true;
@@ -61,8 +61,6 @@
       fira-code-nerdfont
       firefox
       gimp
-      gnomeExtensions.appindicator
-      gnomeExtensions.tactile
       htop
       httpie
       krita
@@ -80,12 +78,6 @@
       VISUAL = "code --wait";
     };
     stateVersion = "23.11";
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface".enable-hot-corners = false;
-    "org/gnome/desktop/wm/preferences".num-workspaces = 1;
-    "org/gnome/mutter".edge-tiling = false;
   };
 
   services = {

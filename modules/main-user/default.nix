@@ -4,7 +4,9 @@
   config,
   lib,
   ...
-}: let
+}:
+
+let
   cfg = config.main-user;
 in {
   options.main-user = {

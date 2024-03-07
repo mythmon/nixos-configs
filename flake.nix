@@ -39,6 +39,7 @@
         ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-stable ]; })
         ./hosts/fractal
         ./modules/standard
+        ./modules/kde
         ./modules/main-user
         ./modules/roland-bridge-cast
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
