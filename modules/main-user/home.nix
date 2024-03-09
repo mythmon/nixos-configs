@@ -77,6 +77,7 @@
       steam-tui
       steamcmd
       units
+      watchexec
     ];
     sessionVariables = {
       EDITOR = "vim";
