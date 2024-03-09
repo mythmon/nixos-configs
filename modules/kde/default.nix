@@ -7,10 +7,10 @@
   services.xserver = {
     enable = true;
     displayManager = {
-      defaultSession = "plasma";
+      defaultSession = "plasmax11";
       sddm = {
         enable = true;
-        wayland.enable = true;
+        wayland.enable = false;
       };
     };
     desktopManager.plasma6.enable = true;
