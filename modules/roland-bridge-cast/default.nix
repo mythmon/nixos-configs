@@ -1,4 +1,8 @@
-{home-manager, config, ...}: {
+{
+  home-manager,
+  config,
+  ...
+}: {
   # TODO Pipewire configuration is better in Nixos 24.05 https://nixos.wiki/wiki/PipeWire
 
   imports = [home-manager.nixosModules.default];

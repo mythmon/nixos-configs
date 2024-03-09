@@ -1,7 +1,10 @@
 # Enable the GNOME Desktop Environment.
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
