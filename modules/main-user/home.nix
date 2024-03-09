@@ -53,7 +53,17 @@
       };
     };
 
-    vscode.enable = true;
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        mkhl.direnv
+        rust-lang.rust-analyzer
+        tamasfe.even-better-toml
+        github.copilot
+        bbenoist.nix
+        kamadorueda.alejandra
+      ];
+    };
   };
 
   home = {
