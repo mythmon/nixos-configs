@@ -1,5 +1,5 @@
 switch:
-  sudo nixos-rebuild switch --flake '.#'
+  ./bin/switch.sh
 
 fmt:
   nix fmt
