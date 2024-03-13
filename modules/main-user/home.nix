@@ -56,14 +56,23 @@
 
     vscode = {
       enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        mkhl.direnv
-        rust-lang.rust-analyzer
-        tamasfe.even-better-toml
-        github.copilot
-        bbenoist.nix
-        kamadorueda.alejandra
-      ];
+      extensions = with pkgs.vscode-extensions;
+        [
+          mkhl.direnv
+          rust-lang.rust-analyzer
+          tamasfe.even-better-toml
+          github.copilot
+          bbenoist.nix
+          kamadorueda.alejandra
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "vscode-auto-scroll";
+            publisher = "pejmannikram";
+            version = "1.2.0";
+            sha256 = "sha256-n9XVvXxrYbJ02fhBcWnPFhl50t2g/qeT1rRqsWHwrmE=";
+          }
+        ];
     };
   };
 

@@ -6,8 +6,11 @@ cd ~/src/nixos-configs
 echo "Formatting"
 alejandra . 2>/dev/null
 
-# echo "Rebuilding"
-sudo nixos-rebuild switch --flake '.#' &>nixos-switch.log || (cat nixos-switch.log | grep --color error && false)
+
+echo "Rebuilding"
+log_file=nixos-switch.log
+echo "see logs at ${log_file}"
+sudo nixos-rebuild switch --flake '.#' &>nixos-switch.log || (cat "${log_file}" | grep --color error && false)
 
 # that worked, so now lets commit it
 echo "Comitting"
