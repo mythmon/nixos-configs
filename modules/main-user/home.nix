@@ -35,6 +35,7 @@
       extraConfig = {
         merge.conflictstyle = "diff3";
         rerere.enable = true;
+        init.defaultBranch = "main";
       };
     };
 
