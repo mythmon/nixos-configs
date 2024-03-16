@@ -3,9 +3,10 @@
   home-manager,
   config,
   system,
+  lib,
   ...
 }: let
-  overlay-atlauncher = self: super: {
+  overlay-atlauncher-version = self: super: {
     atlauncher = super.atlauncher.overrideAttrs (oldAttrs: rec {
       version = "3.4.35.9";
       src = super.fetchurl {
@@ -14,8 +15,25 @@
       };
     });
   };
+  overlay-atlauncher-steam-run = self: super: {
+    atlauncher = super.atlauncher.overrideAttrs (oldAttrs: rec {
+      nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.steam-run];
+      desktopItems = [
+        (super.makeDesktopItem {
+          categories = ["Game"];
+          desktopName = "ATLauncher (steam-run)";
+          exec = "steam-run atlauncher";
+          icon = "atlauncher";
+          name = "atlauncher";
+        })
+      ];
+    });
+  };
 in {
-  nixpkgs.overlays = [overlay-atlauncher];
+  nixpkgs.overlays = [
+    overlay-atlauncher-version
+    overlay-atlauncher-steam-run
+  ];
   home-manager.users.${config.main-user.userName} = {pkgs, ...}: {
     home = {
       packages = with pkgs; [
