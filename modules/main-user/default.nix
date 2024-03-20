@@ -25,8 +25,6 @@ in {
       shell = pkgs.fish;
     };
 
-    programs.steam.enable = true;
-
     # Enable automatic login for the user.
     services.xserver.displayManager.autoLogin.user = cfg.userName;
 

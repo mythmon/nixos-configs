@@ -46,7 +46,8 @@
         ./modules/kde
         ./modules/main-user
         ./modules/roland-bridge-cast
-        ./modules/minecraft.nix
+        ./modules/minecraft
+        ./modules/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
       ];
     };

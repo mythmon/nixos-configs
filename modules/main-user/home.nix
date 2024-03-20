@@ -94,8 +94,6 @@
       ripgrep
       spotify
       rustup
-      steam-tui
-      steamcmd
       units
       watchexec
     ];
