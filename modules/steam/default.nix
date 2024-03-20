@@ -5,7 +5,6 @@
     enable = true;
     remotePlay.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
-    extest.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
