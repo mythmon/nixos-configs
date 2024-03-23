@@ -9,4 +9,6 @@
     enable = true;
     userName = "mythmon";
   };
+
+  nix.gc.automatic = true;
 }

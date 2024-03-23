@@ -18,4 +18,5 @@
     };
   };
   programs.dconf.enable = true;
+  programs.wayland.enable = true;
 }
