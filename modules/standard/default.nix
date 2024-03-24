@@ -11,4 +11,6 @@
   };
 
   nix.gc.automatic = true;
+
+  services.avahi.enable = true;
 }
