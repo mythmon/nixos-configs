@@ -97,7 +97,7 @@
 
   # List packages installed in system profile. To search, use:
   # https://search.nixos.org
-  environment.systemPackages = with pkgs; [efibootmgr vim wget keymapp];
+  environment.systemPackages = with pkgs; [efibootmgr vim wget keymapp btdu];
 
   hardware.keyboard.zsa.enable = true;
 
