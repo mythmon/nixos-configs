@@ -1,11 +1,14 @@
 switch:
-  ./bin/switch.sh
+  ./bin/switch.sh switch
 
 fmt:
   nix fmt
 
 boot:
-  sudo nixos-rebuild boot --flake '.#'
+  ./bin/switch.sh boot
 
 update:
   nix flake update
+
+gc:
+  sudo nix-store --gc

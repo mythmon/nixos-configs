@@ -12,26 +12,15 @@
     ../../modules/roland-bridge-cast
   ];
 
-  fileSystems = {
-    "/windows" = {
-      device = "/dev/disk/by-uuid/AC6095B66095882A";
-      fsType = "ntfs-3g";
-      options = ["rw" "uid=1000"];
+  boot = {
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 4;
+      };
     };
-
-    "/data" = {
-      device = "/dev/disk/by-uuid/EEFED3EFFED3ADD9";
-      fsType = "ntfs-3g";
-      options = ["rw" "uid=1000"];
-    };
-  };
-
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 4;
-    };
+    tmp.useTmpfs = true;
   };
 
   networking.hostName = "fractal";

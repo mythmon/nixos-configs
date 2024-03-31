@@ -21,5 +21,5 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  environment.systemPackages = with pkgs; [glxinfo mesa-demos nvtop];
+  environment.systemPackages = with pkgs; [glxinfo mesa-demos nvtopPackages.full];
 }
