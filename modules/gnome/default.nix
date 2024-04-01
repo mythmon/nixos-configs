@@ -44,6 +44,12 @@
         picture-uri = wallpaper-url;
         picture-uri-dark = wallpaper-url;
       };
+      "org/gnome/shell".favorite-apps = with pkgs; [
+        firefox.desktopItem.name
+        discord.desktopItem.name
+        vscode.desktopItem.name
+        "spotify.desktop"
+      ];
     };
   };
 }
