@@ -51,6 +51,7 @@
         "spotify.desktop"
         "org.gnome.Nautilus.desktop"
       ];
+      "org/gnome/shell".enabled-extensions = ["tactile@lundal.io" "appindicatorsupport@rgcjonas.gmail.com"];
     };
   };
 }
