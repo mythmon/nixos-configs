@@ -9,7 +9,6 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../modules/roland-bridge-cast
   ];
 
   boot = {
