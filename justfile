@@ -12,3 +12,6 @@ update:
 
 gc:
   sudo nix-store --gc
+
+diff:
+  bash -c 'nix run nixpkgs#nix-diff -- $(nix-store -qd $(echo /nix/var/nix/profiles/* | tr " " "\n" | grep link | sort -V | tail -n 2))'
