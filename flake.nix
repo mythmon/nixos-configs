@@ -12,12 +12,17 @@
       url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs-stable,
     nixpkgs,
+    nix-index-database,
     home-manager,
     alejandra,
     ...
@@ -49,6 +54,8 @@
         ./modules/minecraft
         ./modules/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
+        nix-index-database.nixosModules.nix-index
+        {programs.command-not-found.enable = false;}
       ];
     };
   };

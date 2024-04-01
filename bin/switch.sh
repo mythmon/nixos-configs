@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eu
+set -e
 
 echo "Formatting"
 alejandra . 2>/dev/null
