@@ -28,6 +28,7 @@
   home-manager.users.${config.main-user.userName} = {
     home = {
       packages = with pkgs; [
+        gnome.dconf-editor
         gnomeExtensions.appindicator
         gnomeExtensions.tactile
       ];

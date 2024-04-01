@@ -93,8 +93,8 @@
       ncdu
       pavucontrol
       ripgrep
-      spotify
       rustup
+      spotify
       units
       watchexec
     ];
