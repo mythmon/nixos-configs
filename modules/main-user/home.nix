@@ -64,6 +64,7 @@
           github.copilot
           bbenoist.nix
           kamadorueda.alejandra
+          vscodevim.vim
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
