@@ -49,6 +49,7 @@
         discord.desktopItem.name
         vscode.desktopItem.name
         "spotify.desktop"
+        "org.gnome.Nautilus.desktop"
       ];
     };
   };
