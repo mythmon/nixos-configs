@@ -56,8 +56,6 @@
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index
         {programs.command-not-found.enable = false;}
-        # better compatibility when not using any nix channels
-        {nix.nixPath = ["nixpkgs=/run/current-system/nixpkgs"];}
       ];
     };
   };
