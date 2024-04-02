@@ -3,14 +3,18 @@
     just
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+    };
+    gc.automatic = true;
+  };
 
   main-user = {
     enable = true;
     userName = "mythmon";
   };
-
-  nix.gc.automatic = true;
 
   services.avahi = {
     enable = true;
