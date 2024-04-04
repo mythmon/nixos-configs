@@ -26,7 +26,10 @@
 
     firefox = {
       enable = true;
-      profiles.default.search.default = "DuckDuckGo";
+      profiles.default.search = {
+        default = "DuckDuckGo";
+        force = true;
+      };
       nativeMessagingHosts = with pkgs; [
         gnome-browser-connector
       ];
