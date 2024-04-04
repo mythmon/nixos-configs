@@ -48,6 +48,7 @@
         firefox.desktopItem.name
         discord.desktopItem.name
         vscode.desktopItem.name
+        "org.gnome.Console.desktop"
         "spotify.desktop"
         "org.gnome.Nautilus.desktop"
       ];
