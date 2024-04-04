@@ -24,6 +24,14 @@
       ];
     };
 
+    firefox = {
+      enable = true;
+      profiles.default.search.default = "DuckDuckGo";
+      nativeMessagingHosts = with pkgs; [
+        gnome-browser-connector
+      ];
+    };
+
     gh.enable = true;
 
     git = {
@@ -85,7 +93,6 @@
       discord
       fd
       fira-code-nerdfont
-      firefox
       gimp
       htop
       httpie
