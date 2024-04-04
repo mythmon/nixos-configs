@@ -8,8 +8,7 @@ action=$1
 
 echo "Rebuilding"
 log_file=nixos-switch.log
-echo "see logs at ${log_file}"
-sudo nixos-rebuild ${action} --flake '.#' &>nixos-switch.log || (cat "${log_file}" | grep --color error && false)
+sudo nixos-rebuild ${action} --flake '.#' | tee $log_file
 
 # that worked, so now lets commit it
 echo "Comitting"
