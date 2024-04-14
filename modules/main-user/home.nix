@@ -77,6 +77,7 @@
           bbenoist.nix
           kamadorueda.alejandra
           vscodevim.vim
+          vadimcn.vscode-lldb
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
