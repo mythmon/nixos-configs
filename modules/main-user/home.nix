@@ -109,6 +109,7 @@
       rustup
       spotify
       units
+      ungoogled-chromium
       watchexec
     ];
     sessionVariables = {
