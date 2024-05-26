@@ -108,8 +108,9 @@
       ripgrep
       rustup
       spotify
-      units
       ungoogled-chromium
+      units
+      vlc
       watchexec
     ];
     sessionVariables = {
