@@ -26,7 +26,7 @@ in {
     };
 
     # Enable automatic login for the user.
-    services.xserver.displayManager.autoLogin.user = cfg.userName;
+    services.displayManager.autoLogin.user = cfg.userName;
 
     home-manager = {
       useGlobalPkgs = true;
