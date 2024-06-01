@@ -19,6 +19,7 @@
         configurationLimit = 4;
       };
     };
+    plymouth.enable = true;
     tmp.useTmpfs = true;
   };
 
