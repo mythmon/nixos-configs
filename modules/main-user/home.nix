@@ -99,7 +99,6 @@
       discord
       fd
       fira-code-nerdfont
-      forge-mtg
       gimp
       htop
       httpie
