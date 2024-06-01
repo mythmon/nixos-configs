@@ -105,6 +105,7 @@
       krita
       ncdu
       pavucontrol
+      prusa-slicer
       ripgrep
       rustup
       spotify
