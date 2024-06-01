@@ -1,9 +1,9 @@
 {
-  pkgs,
-  home-manager,
   config,
-  system,
+  home-manager,
   lib,
+  pkgs,
+  system,
   ...
 }: let
   overlay-atlauncher-version = self: super: {
@@ -29,6 +29,15 @@
       ];
     });
   };
+  ftb-electron = let
+    pname = "ftb-electron";
+    version = "1.25.11";
+    src = pkgs.fetchurl {
+      url = "https://piston.feed-the-beast.com/app/ftb-app-${version}-x86_64.AppImage";
+      hash = "sha256-mxcqcQA6plQtoKtJ/nIPMRU/iar4pmLGneGE0F/E/fY=";
+    };
+  in
+    pkgs.appimageTools.wrapType2 {inherit pname version src;};
 in {
   nixpkgs.overlays = [
     overlay-atlauncher-version
@@ -38,6 +47,7 @@ in {
     home = {
       packages = with pkgs; [
         atlauncher
+        ftb-electron
       ];
     };
   };
