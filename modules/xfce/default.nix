@@ -23,5 +23,12 @@
       ksuperkey
       xfce.xfce4-appfinder
     ];
+
+    xfconf.settings = {
+      xfce4-desktop = {
+        "backdrop/screen0/monitorDP-2/workspace0/last-image" = "${../../assets/gruvbox-dark-rainbow-2560x1440.png}";
+        "backdrop/screen0/monitorDP-0/workspace0/last-image" = "${../../assets/gruvbox-dark-rainbow-1440x2560.png}";
+      };
+    };
   };
 }

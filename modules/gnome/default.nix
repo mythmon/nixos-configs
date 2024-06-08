@@ -39,7 +39,7 @@
       "org/gnome/desktop/wm/preferences".num-workspaces = 1;
       "org/gnome/mutter".edge-tiling = false;
       "org/gnome/desktop/background" = let
-        wallpaper-url = "file://${./gruvbox-dark-rainbow-2560x2560.png}";
+        wallpaper-url = "file://${../../assets/gruvbox-dark-rainbow-2560x2560.png}";
       in {
         picture-uri = wallpaper-url;
         picture-uri-dark = wallpaper-url;
