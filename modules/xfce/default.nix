@@ -17,4 +17,10 @@
       };
     };
   };
+
+  home-manager.users.${config.main-user.userName} = {
+    home.packages = with pkgs; [
+      xfce.xfce4-whiskermenu-plugin
+    ];
+  };
 }
