@@ -20,6 +20,7 @@
 
   home-manager.users.${config.main-user.userName} = {
     home.packages = with pkgs; [
+      ksuperkey
       xfce.xfce4-appfinder
     ];
   };
