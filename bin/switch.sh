@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -eu -o pipefail
 
 echo "Formatting"
 alejandra . 2>/dev/null
