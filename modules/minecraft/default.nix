@@ -44,7 +44,7 @@
       extraInstallCommands = ''
         install -D -m 444 "${contents}/ftb-app.desktop" "$out/share/applications/ftb-app.desktop"
         install -D -m 444 "${contents}/ftb-app.png" "$out/share/pixmaps/ftb-app.png"
-        #substitueInPlace "$out/share/applications/ftb-app.desktop" --replace "Exec=.*" "Exec=${contents}/ftb-app"
+        substituteInPlace "$out/share/applications/ftb-app.desktop" --replace "Exec=AppRun .*" "Exec=${contents}/ftb-app"
       '';
     };
 in {
