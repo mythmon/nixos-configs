@@ -36,8 +36,17 @@
       url = "https://piston.feed-the-beast.com/app/ftb-app-${version}-x86_64.AppImage";
       hash = "sha256-mxcqcQA6plQtoKtJ/nIPMRU/iar4pmLGneGE0F/E/fY=";
     };
+    contents = pkgs.appimageTools.extractType2 {inherit pname version src;};
   in
-    pkgs.appimageTools.wrapType2 {inherit pname version src;};
+    pkgs.appimageTools.wrapType2 {
+      inherit pname version src;
+
+      extraInstallCommands = ''
+        install -D -m 444 "${contents}/ftb-app.desktop" "$out/share/applications/ftb-app.desktop"
+        install -D -m 444 "${contents}/ftb-app.png" "$out/share/pixmaps/ftb-app.png"
+        #substitueInPlace "$out/share/applications/ftb-app.desktop" --replace "Exec=.*" "Exec=${contents}/ftb-app"
+      '';
+    };
 in {
   nixpkgs.overlays = [
     overlay-atlauncher-version
