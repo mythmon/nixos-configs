@@ -7,6 +7,8 @@
 }: {
   nixpkgs.config.pulseaudio = true;
 
+  security.pam.services.lightdm.enableGnomeKeyring = true;
+
   services = {
     displayManager.defaultSession = "xfce";
 
