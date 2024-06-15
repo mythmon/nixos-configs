@@ -9,6 +9,9 @@
 
   services = {
     displayManager.defaultSession = "xfce";
+
+    gnome.gnome-keyring.enable = true;
+
     xserver = {
       enable = true;
       desktopManager = {
