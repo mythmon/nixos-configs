@@ -48,7 +48,7 @@
         }: {nixpkgs.overlays = [overlay-stable];})
         ./hosts/fractal
         ./modules/standard
-        ./modules/xfce
+        ./modules/gnome
         ./modules/main-user
         ./modules/roland-bridge-cast
         ./modules/minecraft
