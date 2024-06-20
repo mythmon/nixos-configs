@@ -35,9 +35,10 @@
       ];
     };
 
-    fzf = {
+    mcfly = {
       enable = true;
       enableFishIntegration = true;
+      fzf.enable = true;
     };
 
     gh.enable = true;
