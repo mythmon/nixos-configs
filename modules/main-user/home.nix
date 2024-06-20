@@ -35,11 +35,7 @@
       ];
     };
 
-    mcfly = {
-      enable = true;
-      enableFishIntegration = true;
-      fzf.enable = true;
-    };
+    fzf.enable = true;
 
     gh.enable = true;
 
@@ -55,6 +51,12 @@
         rerere.enable = true;
         init.defaultBranch = "main";
       };
+    };
+
+    mcfly = {
+      enable = true;
+      enableFishIntegration = true;
+      fzf.enable = true;
     };
 
     starship = {
