@@ -35,6 +35,11 @@
       ];
     };
 
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     gh.enable = true;
 
     git = {
