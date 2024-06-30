@@ -3,9 +3,8 @@
   config,
   ...
 }: {
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
   };
 
   services.xserver.videoDrivers = ["nvidia"];
