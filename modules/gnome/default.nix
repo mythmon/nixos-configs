@@ -31,6 +31,7 @@
         gnome.dconf-editor
         gnomeExtensions.appindicator
         gnomeExtensions.tactile
+        gnomeExtensions.caffeine
       ];
     };
 
@@ -53,7 +54,11 @@
         "org.gnome.Nautilus.desktop"
       ];
       "org/gnome/shell" = {
-        enabled-extensions = ["tactile@lundal.io" "appindicatorsupport@rgcjonas.gmail.com"];
+        enabled-extensions = [
+          "tactile@lundal.io"
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "caffeine@patapon.info"
+        ];
         disabled-extensions = [];
       };
     };
