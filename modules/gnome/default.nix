@@ -14,13 +14,13 @@
     desktopManager.gnome.enable = true;
   };
 
-  environment.gnome.excludePackages = with pkgs.gnome; [
+  environment.gnome.excludePackages = with pkgs; [
     epiphany
     gnome-calendar
-    gnome-contacts
-    gnome-maps
-    gnome-weather
-    pkgs.gnome-connections
+    gnome.gnome-contacts
+    gnome.gnome-maps
+    gnome.gnome-weather
+    gnome-connections
     simple-scan
     totem
   ];
@@ -28,7 +28,7 @@
   home-manager.users.${config.main-user.userName} = {
     home = {
       packages = with pkgs; [
-        gnome.dconf-editor
+        dconf-editor
         gnomeExtensions.appindicator
         gnomeExtensions.tactile
         gnomeExtensions.caffeine
