@@ -51,7 +51,8 @@
         ./modules/gnome
         ./modules/main-user
         ./modules/roland-bridge-cast
-        ./modules/minecraft
+        ./modules/games/minecraft
+        ./modules/games/worldofgoo2
         ./modules/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index

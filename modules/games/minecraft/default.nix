@@ -3,7 +3,6 @@
   home-manager,
   lib,
   pkgs,
-  system,
   ...
 }: let
   overlay-atlauncher-version = self: super: {
