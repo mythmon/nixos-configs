@@ -74,6 +74,8 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
 
+  services.tailscale.enable = true;
+
   # NOPASSWD for wheel
   security.sudo.wheelNeedsPassword = false;
 
