@@ -48,7 +48,7 @@
       "org/gnome/shell".favorite-apps = with pkgs; [
         firefox.desktopItem.name
         discord.desktopItem.name
-        vscode.desktopItem.name
+        "vscode.desktop"
         "org.gnome.Console.desktop"
         "spotify.desktop"
         "org.gnome.Nautilus.desktop"
