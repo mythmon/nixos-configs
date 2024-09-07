@@ -17,9 +17,9 @@
   environment.gnome.excludePackages = with pkgs; [
     epiphany
     gnome-calendar
-    gnome.gnome-contacts
-    gnome.gnome-maps
-    gnome.gnome-weather
+    gnome-contacts
+    gnome-maps
+    gnome-weather
     gnome-connections
     simple-scan
     totem
