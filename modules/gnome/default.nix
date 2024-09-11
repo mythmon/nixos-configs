@@ -60,6 +60,7 @@
           "caffeine@patapon.info"
         ];
         disabled-extensions = [];
+        disable-user-extensions = false;
       };
       "org/gnome/mutter/keybindings" = {
         switch-monitor = ["XF86Display"];
