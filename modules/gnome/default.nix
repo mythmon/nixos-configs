@@ -61,6 +61,9 @@
         ];
         disabled-extensions = [];
       };
+      "org/gnome/mutter/keybindings" = {
+        switch-monitor = ["XF86Display"];
+      };
     };
   };
 }
