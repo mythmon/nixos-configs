@@ -29,7 +29,5 @@
       enable = true;
       nssmdns4 = true;
     };
-
-    node-red.enable = true;
   };
 }
