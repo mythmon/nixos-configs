@@ -105,7 +105,7 @@
     packages = with pkgs; [
       _1password
       _1password-gui
-      beeper
+      blender
       btop
       discord
       fd

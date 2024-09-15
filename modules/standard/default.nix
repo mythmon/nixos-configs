@@ -24,8 +24,12 @@
     userName = "mythmon";
   };
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
+  services = {
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+    };
+
+    node-red.enable = true;
   };
 }
