@@ -105,6 +105,7 @@
     packages = with pkgs; [
       _1password
       _1password-gui
+      alejandra
       blender
       btop
       discord
