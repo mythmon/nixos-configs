@@ -52,6 +52,7 @@
         "org.gnome.Console.desktop"
         "spotify.desktop"
         "org.gnome.Nautilus.desktop"
+        "steam.desktop"
       ];
       "org/gnome/shell" = {
         enabled-extensions = [
