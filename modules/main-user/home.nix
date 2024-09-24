@@ -120,6 +120,7 @@
       prusa-slicer
       ripgrep
       rustup
+      signal-desktop
       spotify
       ungoogled-chromium
       units
