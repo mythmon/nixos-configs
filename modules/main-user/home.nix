@@ -114,6 +114,8 @@
       gimp
       htop
       httpie
+      jq
+      imagemagick
       krita
       ncdu
       pavucontrol
