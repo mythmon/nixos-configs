@@ -118,6 +118,7 @@
       imagemagick
       krita
       ncdu
+      parallel
       pavucontrol
       prusa-slicer
       ripgrep
