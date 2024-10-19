@@ -3,25 +3,30 @@
 
   inputs = {
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+      follows = "nixos-cosmic/nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixos-cosmic/nixpkgs";
     };
     alejandra = {
       url = "github:kamadorueda/alejandra/3.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixos-cosmic/nixpkgs";
     };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixos-cosmic/nixpkgs";
     };
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
   outputs = inputs @ {
     self,
     nixpkgs-stable,
     nixpkgs,
+    nixos-cosmic,
     nix-index-database,
     home-manager,
     alejandra,
@@ -41,14 +46,12 @@
       inherit system;
       specialArgs = inputs;
       modules = [
-        ({
-          config,
-          pkgs,
-          ...
-        }: {nixpkgs.overlays = [overlay-stable];})
+        ({...}: {nixpkgs.overlays = [overlay-stable];})
         ./hosts/fractal
         ./modules/standard
         ./modules/gnome
+        ./modules/cosmic
+        nixos-cosmic.nixosModules.default
         ./modules/main-user
         ./modules/roland-bridge-cast
         ./modules/games/minecraft

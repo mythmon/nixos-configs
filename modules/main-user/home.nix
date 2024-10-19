@@ -1,10 +1,5 @@
 # home-manager user config
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs = {
     direnv = {
       enable = true;
