@@ -129,6 +129,7 @@
       units
       vlc
       watchexec
+      zed-editor
     ];
     sessionVariables = {
       EDITOR = "vim";
