@@ -29,6 +29,7 @@ in {
     services.displayManager.autoLogin.user = cfg.userName;
 
     home-manager = {
+      backupFileExtension = "backup";
       useGlobalPkgs = true;
       users.${cfg.userName} = import ./home.nix;
     };

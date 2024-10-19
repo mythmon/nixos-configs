@@ -99,6 +99,22 @@
           }
         ];
     };
+
+    zed-editor = {
+      enable = true;
+      userSettings = {
+        base_keymap = "VSCode";
+        vim_mode = true;
+        ui_font_size = 16;
+        buffer_font_size = 16;
+        theme = {
+          mode = "system";
+          light = "One Light";
+          dark = "One Dark";
+        };
+        tab_size = 2;
+      };
+    };
   };
 
   home = {
@@ -118,6 +134,7 @@
       imagemagick
       krita
       ncdu
+      nixd
       parallel
       pavucontrol
       prusa-slicer

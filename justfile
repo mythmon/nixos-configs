@@ -1,6 +1,8 @@
 switch:
   ./bin/switch.sh switch
 
+format: fmt
+
 fmt:
   nix fmt
 
