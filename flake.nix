@@ -28,7 +28,6 @@
     nixpkgs,
     nixos-cosmic,
     nix-index-database,
-    home-manager,
     alejandra,
     ...
   }: let

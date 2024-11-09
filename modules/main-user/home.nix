@@ -114,10 +114,9 @@
 
   home = {
     packages = with pkgs; [
-      _1password
+      _1password-cli
       _1password-gui
       alejandra
-      blender
       btop
       discord
       fd
