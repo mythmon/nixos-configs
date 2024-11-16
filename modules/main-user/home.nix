@@ -98,7 +98,10 @@
     zed-editor = {
       enable = true;
       userSettings = {
-        base_keymap = "VSCode";
+        autosave = "on_focus_change";
+        auto_update = false;
+        base_keymap = "None";
+
         vim_mode = true;
         ui_font_size = 16;
         buffer_font_size = 16;
