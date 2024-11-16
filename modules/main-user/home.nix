@@ -100,7 +100,7 @@
       userSettings = {
         autosave = "on_focus_change";
         auto_update = false;
-        base_keymap = "None";
+        base_keymap = "VSCode";
 
         languages.Rust.tab_size = 4;
 
