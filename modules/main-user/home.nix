@@ -72,29 +72,6 @@
       };
     };
 
-    vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-extensions;
-        [
-          mkhl.direnv
-          rust-lang.rust-analyzer
-          tamasfe.even-better-toml
-          github.copilot
-          bbenoist.nix
-          kamadorueda.alejandra
-          vscodevim.vim
-          vadimcn.vscode-lldb
-        ]
-        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "vscode-auto-scroll";
-            publisher = "pejmannikram";
-            version = "1.2.0";
-            sha256 = "sha256-n9XVvXxrYbJ02fhBcWnPFhl50t2g/qeT1rRqsWHwrmE=";
-          }
-        ];
-    };
-
     zed-editor = {
       enable = true;
       userSettings = {
@@ -151,7 +128,6 @@
     sessionVariables = {
       EDITOR = "vim";
       NIXOS_OZONE_WL = "1";
-      VISUAL = "code --wait";
     };
     stateVersion = "23.11";
   };
