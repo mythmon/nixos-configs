@@ -131,6 +131,7 @@
       httpie
       jq
       imagemagick
+      imv
       krita
       ncdu
       nixd
