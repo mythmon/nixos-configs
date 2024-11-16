@@ -102,6 +102,8 @@
         auto_update = false;
         base_keymap = "None";
 
+        languages.Rust.tab_size = 4;
+
         vim_mode = true;
         ui_font_size = 16;
         buffer_font_size = 16;
