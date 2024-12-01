@@ -56,6 +56,15 @@
       mkdir -p $out/bin
       ln -s $out/opt/picotron/picotron $out/bin/picotron
     '';
+
+    # https://www.lexaloffle.com/bbs/?tid=141116
+    runtimeDependencies = with pkgs; [
+      xorg.libXrandr # for renderer
+      libGL # for renderer
+      alsa-lib # for audio
+      udev # for gamepads
+      wget # for downloading carts
+    ];
   };
 in {
   home-manager.users.${config.main-user.userName} = {...}: {
