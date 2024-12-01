@@ -35,7 +35,10 @@
 
     fzf.enable = true;
 
-    gh.enable = true;
+    gh = {
+      enable = true;
+      gitCredentialHelper.enable = true;
+    };
 
     git = {
       diff-so-fancy.enable = true;
