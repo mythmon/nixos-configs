@@ -23,3 +23,6 @@ iso:
 
 check:
   nixos-rebuild dry-build --flake '.#'
+
+build:
+  nixos-rebuild build --flake '.#'

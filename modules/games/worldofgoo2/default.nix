@@ -33,8 +33,6 @@
       sha256 = "1jibv9amqpc9955pxcjqnhwlynvr6ci4179g5ah5mppppmx9vlzx";
     };
 
-    sourceRoot = pname;
-
     meta = with lib; {
       description = "Physics based puzzle game";
       longDescription = ''
@@ -48,10 +46,6 @@
     };
 
     contents = pkgs.appimageTools.extract {inherit pname version src;};
-
-    libPath = lib.makeLibraryPath [
-      pkgs.libcurl-gnutls
-    ];
   in
     pkgs.appimageTools.wrapType2 {
       inherit pname version src meta helpMsg;

@@ -53,7 +53,7 @@
         ./modules/main-user
         ./modules/roland-bridge-cast
         ./modules/games/minecraft
-        ./modules/games/worldofgoo2
+        ./modules/games/picotron
         ./modules/games/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index
