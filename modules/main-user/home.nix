@@ -48,10 +48,8 @@
       userName = "Michael Cooper";
 
       extraConfig = let
-        # op_path = "/run/wrappers/bin/op";
-        op_path = "${pkgs._1password-cli}/bin/op";
-        gh_path = "${pkgs.gh}/bin/gh";
-        helper = "!${op_path} plugin run -- ${gh_path} auth git-credential";
+        op_path = "/run/wrappers/bin/op";
+        helper = "!${op_path} plugin run -- gh auth git-credential";
       in {
         # autocrlf = "input";
         merge.conflictstyle = "zdiff3";
