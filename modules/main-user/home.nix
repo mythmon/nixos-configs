@@ -41,16 +41,24 @@
     };
 
     git = {
-      diff-so-fancy.enable = true;
+      delta.enable = true;
       enable = true;
       ignores = [".direnv"];
       userEmail = "mythmon@gmail.com";
       userName = "Michael Cooper";
 
-      extraConfig = {
-        merge.conflictstyle = "diff3";
+      extraConfig = let
+        # op_path = "/run/wrappers/bin/op";
+        op_path = "${pkgs._1password-cli}/bin/op";
+        gh_path = "${pkgs.gh}/bin/gh";
+        helper = "!${op_path} plugin run -- ${gh_path} auth git-credential";
+      in {
+        # autocrlf = "input";
+        merge.conflictstyle = "zdiff3";
         rerere.enable = true;
         init.defaultBranch = "main";
+        "credential \"https://github.com\"".helper = helper;
+        "credential \"https://gist.github.com\"".helper = helper;
       };
     };
 
