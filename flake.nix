@@ -48,13 +48,13 @@
         ({...}: {nixpkgs.overlays = [overlay-stable];})
         ./hosts/fractal
         ./modules/standard
-        ./modules/cosmic
+        ./modules/desktops/cosmic
         nixos-cosmic.nixosModules.default
         ./modules/main-user
         ./modules/roland-bridge-cast
         ./modules/games/minecraft
         ./modules/games/worldofgoo2
-        ./modules/steam
+        ./modules/games/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index
         {programs.command-not-found.enable = false;}

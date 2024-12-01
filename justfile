@@ -20,3 +20,6 @@ diff:
 
 iso:
   nix build ./iso#nixosConfigurations.exampleIso.config.system.build.isoImage
+
+check:
+  nixos-rebuild dry-build --flake '.#'

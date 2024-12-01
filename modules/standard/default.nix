@@ -12,10 +12,6 @@
     settings = {
       auto-optimise-store = true;
       experimental-features = ["nix-command" "flakes"];
-
-      # for https://github.com/nixified-ai/flake
-      trusted-substituters = ["https://ai.cachix.org"];
-      trusted-public-keys = ["ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="];
     };
   };
 
@@ -29,5 +25,28 @@
       enable = true;
       nssmdns4 = true;
     };
+  };
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+  ];
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  programs = {
+    _1password.enable = true;
+    _1password-gui.enable = true;
+    fish.enable = true;
   };
 }
