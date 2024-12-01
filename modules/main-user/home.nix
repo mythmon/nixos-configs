@@ -99,6 +99,7 @@
           dark = "One Dark";
         };
         tab_size = 2;
+        use_autoclose = false;
       };
     };
   };
