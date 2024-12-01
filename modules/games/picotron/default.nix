@@ -15,6 +15,7 @@
     exec = "picotron";
     desktopName = "Picotron";
     categories = ["Development"];
+    icon = "picotron";
   };
 
   picotron = pkgs.stdenv.mkDerivation {
@@ -35,7 +36,7 @@
       sourceProvenance = [lib.sourceTypes.binaryNativeCode];
     };
 
-    nativeBuildInputs = [pkgs.unzip];
+    nativeBuildInputs = [pkgs.unzip pkgs.autoPatchelfHook];
 
     src = pkgs.requireFile {
       message = ''
