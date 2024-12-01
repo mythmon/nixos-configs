@@ -111,6 +111,7 @@
       alejandra
       btop
       discord
+      eza
       fd
       fira-code-nerdfont
       gimp
