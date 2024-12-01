@@ -52,7 +52,7 @@
     installPhase = ''
       install -Dm555 -t $out/opt/picotron ./picotron ./picotron.dat
       install -Dm444 ${desktopItem}/share/applications/picotron.desktop $out/share/applications/picotron.desktop
-      install -Dm444 ./lexaloffle-picotron.png $out/share/pixmaps/picotron.png
+      install -Dm444 ./lexaloffle-picotron.png $out/share/icons/hicolor/128x128/picotron.png
       mkdir -p $out/bin
       ln -s $out/opt/picotron/picotron $out/bin/picotron
     '';
