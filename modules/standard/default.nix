@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  mainUserName = "mythmon";
+in {
   environment.systemPackages = with pkgs; [
     file
     just
@@ -17,7 +19,7 @@
 
   main-user = {
     enable = true;
-    userName = "mythmon";
+    userName = mainUserName;
   };
 
   services = {
@@ -46,7 +48,10 @@
   # started in user sessions.
   programs = {
     _1password.enable = true;
-    _1password-gui.enable = true;
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [mainUserName];
+    };
     fish.enable = true;
   };
 }
