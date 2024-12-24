@@ -60,5 +60,22 @@
         {programs.command-not-found.enable = false;}
       ];
     };
+
+    nixosConfigurations.graphite = nixpkgs.lib.nixosSystem rec {
+      inherit system;
+      specialArgs = inputs;
+      modules = [
+        ({...}: {nixpkgs.overlays = [overlay-stable];})
+        ./hosts/graphite
+        ./modules/standard
+        ./modules/desktops/cosmic
+        nixos-cosmic.nixosModules.default
+        ./modules/main-user
+        ./modules/roland-bridge-cast
+        {environment.systemPackages = [alejandra.defaultPackage.${system}];}
+        nix-index-database.nixosModules.nix-index
+        {programs.command-not-found.enable = false;}
+      ];
+    };
   };
 }
