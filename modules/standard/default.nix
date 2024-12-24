@@ -53,5 +53,6 @@ in {
       polkitPolicyOwners = [mainUserName];
     };
     fish.enable = true;
+    localsend.enable = true;
   };
 }

@@ -121,7 +121,6 @@
       imagemagick
       imv
       krita
-      localsend
       ncdu
       nixd
       parallel
