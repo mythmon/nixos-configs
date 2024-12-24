@@ -72,6 +72,7 @@
         nixos-cosmic.nixosModules.default
         ./modules/main-user
         ./modules/roland-bridge-cast
+        ./modules/observable
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index
         {programs.command-not-found.enable = false;}
