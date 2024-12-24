@@ -4,7 +4,7 @@
   ];
 
   boot = {
-    initrd.availableKernelModules = [ "aesni_intel" "cryptd" ];
+    initrd.availableKernelModules = ["aesni_intel" "cryptd"];
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -51,6 +51,8 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  services.libinput.touchpad.naturalScrolling = true;
 
   # NOPASSWD for wheel
   security.sudo.wheelNeedsPassword = false;
