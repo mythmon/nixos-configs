@@ -35,24 +35,28 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  services = {
+    fprintd.enable = true;
 
-  services.printing.enable = true;
+    libinput.touchpad.naturalScrolling = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+
+    printing.enable = true;
+
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+  };
 
   security.rtkit.enable = true;
   hardware.pulseaudio.enable = false; # disable PulseAudio
-  # Pipewire is our one true audio daemon
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  services.libinput.touchpad.naturalScrolling = true;
 
   # NOPASSWD for wheel
   security.sudo.wheelNeedsPassword = false;
