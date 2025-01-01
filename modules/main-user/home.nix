@@ -129,7 +129,7 @@
       eza
       fd
       file
-      fira-code-nerdfont
+      nerd-fonts.fira-code
       gimp
       htop
       httpie
