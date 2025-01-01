@@ -128,17 +128,20 @@
       discord
       eza
       fd
+      file
       fira-code-nerdfont
       gimp
       htop
       httpie
-      jq
       imagemagick
       imv
+      jq
+      just
       krita
       ncdu
       nil
       nixd
+      obsidian
       parallel
       pavucontrol
       prusa-slicer
@@ -148,9 +151,11 @@
       spotify
       ungoogled-chromium
       units
+      unzip
       vlc
       watchexec
       zed-editor
+      zip
     ];
     sessionVariables = {
       EDITOR = "vim";

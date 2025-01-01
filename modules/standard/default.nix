@@ -1,13 +1,6 @@
 {pkgs, ...}: let
   mainUserName = "mythmon";
 in {
-  environment.systemPackages = with pkgs; [
-    file
-    just
-    unzip
-    zip
-  ];
-
   nix = {
     gc.automatic = true;
 
