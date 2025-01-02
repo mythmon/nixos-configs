@@ -144,6 +144,7 @@
       obsidian
       parallel
       pavucontrol
+      pwvucontrol
       prusa-slicer
       ripgrep
       rustup
