@@ -41,6 +41,14 @@
   };
 
   services = {
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        battery.governor = "powersave";
+        charger.governor = "performance";
+      };
+    };
+
     fprintd.enable = true;
 
     libinput.touchpad = {
@@ -55,7 +63,7 @@
       pulse.enable = true;
     };
 
-    power-profiles-daemon.enable = true;
+    power-profiles-daemon.enable = false;
 
     printing.enable = true;
 
