@@ -55,13 +55,19 @@
       pulse.enable = true;
     };
 
+    power-profiles-daemon.enable = true;
+
     printing.enable = true;
+
+    thermald.enable = true;
 
     xserver.xkb = {
       layout = "us";
       variant = "";
     };
   };
+
+  powerManagement.powertop.enable = true;
 
   security.rtkit.enable = true;
   hardware.pulseaudio.enable = false; # disable PulseAudio
