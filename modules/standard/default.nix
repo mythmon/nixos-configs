@@ -48,5 +48,6 @@ in {
     };
     fish.enable = true;
     localsend.enable = true;
+    nix-ld.enable = true;
   };
 }
