@@ -51,6 +51,7 @@
         ./modules/desktops/cosmic
         nixos-cosmic.nixosModules.default
         ./modules/main-user
+        ./modules/1password
         ./modules/roland-bridge-cast
         ./modules/games/minecraft
         ./modules/games/picotron
@@ -73,6 +74,7 @@
         ./modules/main-user
         ./modules/roland-bridge-cast
         ./modules/observable
+        ./modules/1password
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index
         {programs.command-not-found.enable = false;}

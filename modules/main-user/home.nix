@@ -121,7 +121,6 @@
 
   home = {
     packages = with pkgs; [
-      _1password-cli
       alejandra
       btop
       discord
