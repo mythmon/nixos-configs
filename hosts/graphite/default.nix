@@ -43,7 +43,10 @@
   services = {
     fprintd.enable = true;
 
-    libinput.touchpad.naturalScrolling = true;
+    libinput.touchpad = {
+      naturalScrolling = true;
+      clickMethod = "clickfinger";
+    };
 
     pipewire = {
       enable = true;
