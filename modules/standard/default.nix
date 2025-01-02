@@ -20,6 +20,7 @@ in {
       enable = true;
       nssmdns4 = true;
     };
+    openssh.enable = true;
   };
 
   fonts.packages = with pkgs; [
