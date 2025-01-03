@@ -127,7 +127,6 @@
       eza
       fd
       file
-      nerd-fonts.fira-code
       gimp
       htop
       httpie
