@@ -132,6 +132,7 @@
       httpie
       imagemagick
       imv
+      inkscape
       jq
       just
       krita
