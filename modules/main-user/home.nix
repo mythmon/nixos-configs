@@ -151,6 +151,7 @@
       ungoogled-chromium
       units
       unzip
+      usbutils
       vlc
       watchexec
       zed-editor
