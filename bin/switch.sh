@@ -18,4 +18,4 @@ generation=$(nixos-rebuild list-generations | awk 'NR==2 {print $1}')
 touch "$template"
 echo "$(hostname) gen ${generation} - " > "$template"
 
-git commit -av --template="$template"
+git commit --allow-empty -av --template="$template"
