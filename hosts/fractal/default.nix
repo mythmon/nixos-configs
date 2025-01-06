@@ -7,10 +7,7 @@
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 4;
-      };
+      systemd-boot.enable = true;
     };
     plymouth.enable = true;
     tmp.useTmpfs = true;

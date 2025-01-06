@@ -7,10 +7,7 @@
     initrd.availableKernelModules = ["aesni_intel" "cryptd"];
     loader = {
       efi.canTouchEfiVariables = true;
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 10;
-      };
+      systemd-boot.enable = true;
     };
     tmp.useTmpfs = true;
   };
