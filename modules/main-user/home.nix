@@ -123,6 +123,7 @@
     packages = with pkgs; [
       alejandra
       btop
+      cameractrls-gtk4
       discord
       eza
       fd
