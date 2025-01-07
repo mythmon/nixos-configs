@@ -17,12 +17,20 @@ in {
     overlay-1password
   ];
 
-  home-manager = {
-    users.${cfg.userName} = {
-      home = {
-        packages = with pkgs; [
-          _1password-cli
-        ];
+  home-manager.users.${cfg.userName} = {
+    home = {
+      packages = with pkgs; [
+        _1password-cli
+      ];
+    };
+
+    programs.ssh = {
+      matchBlocks = {
+        "*" = {
+          extraOptions = {
+            IdentityAgent = "~/.1password/agent.sock";
+          };
+        };
       };
     };
   };
