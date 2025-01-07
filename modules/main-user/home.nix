@@ -51,12 +51,16 @@
         op_path = "/run/wrappers/bin/op";
         helper = "!${op_path} plugin run -- gh auth git-credential";
       in {
-        # autocrlf = "input";
         merge.conflictstyle = "zdiff3";
         rerere.enable = true;
         init.defaultBranch = "main";
         "credential \"https://github.com\"".helper = helper;
         "credential \"https://gist.github.com\"".helper = helper;
+
+        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIbDQ447YU9E/9dGLzcgqXCDpMCxK8Wqt2K9EvapBL/J";
+        gpg.format = "ssh";
+        "gpg \"ssh\"".program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+        commit.gpgsign = true;
       };
     };
 
