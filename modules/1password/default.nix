@@ -42,4 +42,9 @@ in {
       polkitPolicyOwners = [cfg.userName];
     };
   };
+
+  # Gnome keyring seems to have some trouble with 1password. Use keepassxc
+  # instead, which provides a system keyring.
+  environment.systemPackages = with pkgs; [keepassxc];
+  services.gnome.gnome-keyring.enable = false;
 }
