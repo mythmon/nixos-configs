@@ -34,4 +34,6 @@ in {
       polkitPolicyOwners = [cfg.userName];
     };
   };
+
+  environment.systemPackages = with pkgs; [keepassxc];
 }
