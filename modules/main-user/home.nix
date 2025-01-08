@@ -89,6 +89,13 @@
       enable = true;
       extensions = ["nix" "toml" "elixir" "make" "html" "dockerfile" "git_firefly"];
       userSettings = {
+        assistant = {
+          default_model = {
+            provider = "zed.dev";
+            model = "claude-3-5-sonnet-latest";
+          };
+          version = 2;
+        };
         autosave = "on_focus_change";
         auto_update = false;
         base_keymap = "VSCode";
