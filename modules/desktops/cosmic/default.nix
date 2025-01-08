@@ -12,7 +12,7 @@
 
   # https://github.com/lilyinstarlight/nixos-cosmic/issues/220
   systemd.user.services.gnome-keyring = {
-    preStart = ''
+    postStart = ''
       ${pkgs.dbus}/bin/dbus-update-activation-environment --all
     '';
   };
