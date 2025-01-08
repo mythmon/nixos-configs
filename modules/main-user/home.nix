@@ -158,6 +158,7 @@
       prusa-slicer
       ripgrep
       rustup
+      sgt-puzzles
       signal-desktop
       spotify
       ungoogled-chromium
