@@ -118,7 +118,7 @@
           dock = "right";
           option_as_meta = true;
           copy_on_select = true;
-          env.EDITOR = "vim";
+          env.EDITOR = "zeditor --wait";
         };
         ui_font_size = 16;
         use_autoclose = false;
