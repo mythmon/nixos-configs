@@ -139,6 +139,7 @@
       eza
       fd
       file
+      ghostty
       gimp
       htop
       httpie
