@@ -48,7 +48,7 @@
         ({...}: {nixpkgs.overlays = [overlay-stable];})
         ./hosts/fractal
         ./modules/standard
-        ./modules/desktops/cosmic
+        ./modules/desktops/gnome
         nixos-cosmic.nixosModules.default
         ./modules/main-user
         ./modules/1password
