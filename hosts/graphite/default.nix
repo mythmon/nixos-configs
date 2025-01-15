@@ -53,13 +53,6 @@
       clickMethod = "clickfinger";
     };
 
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
     power-profiles-daemon.enable = false;
 
     printing.enable = true;
@@ -73,7 +66,13 @@
   };
 
   security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false; # disable PulseAudio
+  services.pulseaudio.enable = false; # disable PulseAudio
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   # NOPASSWD for wheel
   security.sudo.wheelNeedsPassword = false;
