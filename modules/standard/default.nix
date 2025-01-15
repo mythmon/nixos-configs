@@ -47,6 +47,13 @@ in {
     ];
   };
 
+  environment.sessionVariables = {
+    # Enable the use of XInput2 for better mouse support in Firefox.
+    MOZ_USE_XINPUT2 = "1";
+    # Enable Wayland support in Firefox.
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
