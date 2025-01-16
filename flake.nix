@@ -69,7 +69,7 @@
         ({...}: {nixpkgs.overlays = [overlay-stable];})
         ./hosts/graphite
         ./modules/standard
-        ./modules/desktops/cosmic
+        ./modules/desktops/gnome
         nixos-cosmic.nixosModules.default
         ./modules/main-user
         ./modules/roland-bridge-cast
