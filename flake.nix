@@ -45,7 +45,7 @@
       inherit system;
       specialArgs = inputs;
       modules = [
-        ({...}: {nixpkgs.overlays = [overlay-stable];})
+        ({...}: {nixpkgs.overlays = [];})
         ./hosts/fractal
         ./modules/standard
         ./modules/maker
