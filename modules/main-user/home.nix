@@ -103,6 +103,7 @@
         cursor_blink = false;
         format_on_save = "off";
         languages.Rust.tab_size = 4;
+        lsp.nil.autoArchive = true;
         preview_tabs.enabled = false;
         scrollbar.show = "always";
         show_inline_completions = true;
