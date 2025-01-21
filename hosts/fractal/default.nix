@@ -62,9 +62,9 @@
 
   hardware.keyboard.zsa.enable = true;
 
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
+    autoPrune.enable = true;
     enable = true;
-    setSocketVariable = true;
   };
 
   powerManagement = {

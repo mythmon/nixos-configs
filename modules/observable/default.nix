@@ -28,4 +28,6 @@
       "ws.observable.test"
     ];
   };
+
+  virtualisation.docker.autoPrune.flags = ["--all" "--filter" "label=prune=always"];
 }
