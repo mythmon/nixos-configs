@@ -60,7 +60,7 @@ in {
         "org/gnome/shell".favorite-apps = with pkgs; [
           firefox.desktopItem.name
           cfg.chatApp
-          "code.desktop"
+          "dev.zed.Zed.desktop"
           "org.gnome.Console.desktop"
           "spotify.desktop"
           "org.gnome.Nautilus.desktop"
