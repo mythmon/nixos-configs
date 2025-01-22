@@ -26,6 +26,7 @@
       "usercontent.test"
       "worker.test"
       "ws.observable.test"
+      "workspace-1.observablecloud.test"
     ];
   };
 
