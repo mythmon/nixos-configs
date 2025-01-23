@@ -25,7 +25,8 @@ in {
     };
 
     # Enable automatic login for the user.
-    services.displayManager.autoLogin.user = cfg.userName;
+    # Disabled because it might be causing a bug?
+    #services.displayManager.autoLogin.user = cfg.userName;
 
     home-manager = {
       backupFileExtension = "backup";
