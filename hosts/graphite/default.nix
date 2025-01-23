@@ -84,9 +84,9 @@
 
   hardware.keyboard.zsa.enable = true;
 
-  virtualisation.docker = {
-    autoPrune.enable = true;
+  virtualisation.docker.rootless = {
     enable = true;
+    setSocketVariable = true;
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
