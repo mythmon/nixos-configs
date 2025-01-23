@@ -39,7 +39,7 @@
   services.printing.enable = true;
 
   security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false; # disable PulseAudio
+  services.pulseaudio.enable = false; # disable PulseAudio
   # Pipewire is our one true audio daemon
   services.pipewire = {
     enable = true;

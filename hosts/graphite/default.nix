@@ -73,7 +73,7 @@
   };
 
   security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false; # disable PulseAudio
+  services.pulseaudio.enable = false; # disable PulseAudio
 
   # NOPASSWD for wheel
   security.sudo.wheelNeedsPassword = false;
