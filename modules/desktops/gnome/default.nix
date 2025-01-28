@@ -50,6 +50,10 @@ in {
       dconf.settings = {
         "org/gnome/desktop/interface".enable-hot-corners = false;
         "org/gnome/desktop/wm/preferences".num-workspaces = 1;
+        "org/gnome/desktop/wm/keybindings" = {
+          "switch-applications" = ["<Super>Tab"];
+          "switch-windows" = ["<Alt>Tab"];
+        };
         "org/gnome/mutter".edge-tiling = false;
         "org/gnome/desktop/background" = let
           wallpaper-url = "file://${../../../assets/gruvbox-dark-rainbow-2560x1440.png}";
