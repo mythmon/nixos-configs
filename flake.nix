@@ -46,6 +46,7 @@
       specialArgs = inputs;
       modules = [
         ({...}: {nixpkgs.overlays = [overlay-stable];})
+        ({...}: {nix.settings.substituters = ["https://cache.nixos.org/"];})
         ./hosts/fractal
         ./modules/standard
         ./modules/desktops/gnome
