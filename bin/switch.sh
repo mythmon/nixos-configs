@@ -17,5 +17,7 @@ template="${dir}/commit-message-template"
 generation=$(nixos-rebuild list-generations | awk 'NR==2 {print $1}')
 touch "$template"
 echo "$(hostname) gen ${generation} - " > "$template"
+echo Using template "$template"
 
 git commit --allow-empty -av --template="$template"
+rm -r $dir
