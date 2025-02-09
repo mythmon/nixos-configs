@@ -6,6 +6,7 @@
     google-chrome
     rambox
     heroku
+    postgresql_17_jit
   ];
 
   networking.hosts = {
