@@ -8,6 +8,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    yafc-ce
     steam-tui
     steamcmd
   ];
