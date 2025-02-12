@@ -10,6 +10,8 @@ in {
     };
   };
 
+  networking.firewall.enable = false;
+
   boot.loader.systemd-boot.configurationLimit = 10;
 
   # The fish modules enables this by default for some completions. It is slow to build
