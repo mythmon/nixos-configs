@@ -12,6 +12,7 @@
   networking.hosts = {
     "127.0.0.1" = [
       "api.observable.test"
+      "app.observable.test"
       "avatars.test"
       "connector.test"
       "custom.test"
