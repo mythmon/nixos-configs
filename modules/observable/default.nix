@@ -25,6 +25,8 @@
       "observablehq.observablecloud.test"
       "projects.test"
       "prompts.test"
+      "proxy.observable.test"
+      "tldraw.observable.test"
       "usercontent.test"
       "worker.test"
       "ws.observable.test"
