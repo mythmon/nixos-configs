@@ -24,7 +24,7 @@ in {
       lsp.nil.autoArchive = true;
       preview_tabs.enabled = false;
       scrollbar.show = "always";
-      show_inline_completions = true;
+      show_edit_predictions = true;
       theme = {
         mode = "dark";
         light = "One Light";
