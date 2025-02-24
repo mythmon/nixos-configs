@@ -6,6 +6,11 @@
 }: let
   cfg = config.main-user;
 in {
+  imports = [
+    ./home.nix
+    ./zed.nix
+  ];
+
   options.main-user = {
     enable = lib.mkEnableOption "enable main-user module";
     userName = lib.mkOption {
@@ -31,7 +36,6 @@ in {
     home-manager = {
       backupFileExtension = "backup";
       useGlobalPkgs = true;
-      users.${cfg.userName} = import ./home.nix;
     };
   };
 }
