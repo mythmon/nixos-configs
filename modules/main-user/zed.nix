@@ -21,7 +21,10 @@ in {
       features.edit_prediction_provider = "zed";
       format_on_save = "off";
       languages.Rust.tab_size = 4;
-      lsp.nil.autoArchive = true;
+      lsp = {
+        nil.autoArchive = true;
+        rust-analyzer.binary.path_lookup = true;
+      };
       preview_tabs.enabled = false;
       scrollbar.show = "always";
       show_edit_predictions = true;
