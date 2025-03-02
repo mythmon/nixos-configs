@@ -116,6 +116,7 @@ in {
         nil
         nixd
         obsidian
+        orca-slicer
         parallel
         pavucontrol
         pwvucontrol
