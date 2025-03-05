@@ -1,9 +1,19 @@
-{config, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.main-user;
 in {
   home-manager.users.${cfg.userName}.programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "toml" "elixir" "make" "html" "dockerfile" "git_firefly"];
+
+    package = pkgs.zed.overrideAttrs (oldAttrs: {
+      pname = "zed-editor-preview";
+      version = "0.177.2";
+    });
+
+    extensions = ["dockerfile" "elixir" "git_firefly" "html" "make" "nix" "sql" "terraform" "toml"];
     userSettings = {
       assistant = {
         default_model = {
