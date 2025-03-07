@@ -132,7 +132,6 @@ in {
         usbutils
         vlc
         watchexec
-        zed-editor
         zip
       ];
       sessionVariables = {

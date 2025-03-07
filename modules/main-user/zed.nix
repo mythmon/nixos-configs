@@ -1,9 +1,41 @@
-{config, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.main-user;
 in {
   home-manager.users.${cfg.userName}.programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "toml" "elixir" "make" "html" "dockerfile" "git_firefly"];
+
+    package = pkgs.zed-editor.overrideAttrs (
+      finalAttrs: prevAttrs: {
+        version = "0.177.2";
+        src = prevAttrs.src.override {
+          tag = "v${finalAttrs.version}-pre";
+          hash = "sha256-FjOr+5apiv3/9DoHdoaHLBp4RNYqiRj7+BPXfGTDBdM=";
+        };
+        postPatch =
+          builtins.replaceStrings [prevAttrs.version] [finalAttrs.version]
+          prevAttrs.postPatch;
+        cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+          inherit (finalAttrs) pname version src;
+          hash = "sha256-zF3BhYbeWh4tkUiQKsrdvK6PDVuGxyHqUUvij5iHjyY=";
+        };
+        env =
+          prevAttrs.env
+          // {
+            RELEASE_VERSION = finalAttrs.version;
+          };
+        patches = [
+          ./0001-zed-generate-licenses-no-fail.patch
+          ./0002-zed-linux-linker.patch
+          "script/patches/use-cross-platform-livekit.patch"
+        ];
+      }
+    );
+
+    extensions = ["dockerfile" "elixir" "git_firefly" "html" "make" "nix" "sql" "terraform" "toml"];
     userSettings = {
       assistant = {
         default_model = {
