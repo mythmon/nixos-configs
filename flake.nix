@@ -46,6 +46,7 @@
       specialArgs = inputs;
       modules = [
         ({...}: {nixpkgs.overlays = [];})
+        ({...}: {nix.settings.substituters = ["https://cache.nixos.org/"];})
         ./hosts/fractal
         ./modules/standard
         ./modules/maker
@@ -77,6 +78,7 @@
         ./modules/roland-bridge-cast
         ./modules/observable
         ./modules/1password
+        ./modules/games/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index
         {programs.command-not-found.enable = false;}

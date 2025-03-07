@@ -65,7 +65,7 @@ in {
           firefox.desktopItem.name
           cfg.chatApp
           "dev.zed.Zed.desktop"
-          "org.gnome.Console.desktop"
+          "com.mitchellh.ghostty.desktop"
           "spotify.desktop"
           "org.gnome.Nautilus.desktop"
           "steam.desktop"

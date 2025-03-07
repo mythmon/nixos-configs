@@ -6,27 +6,16 @@
     google-chrome
     rambox
     heroku
+    postgresql_17_jit
   ];
 
-  networking.hosts = {
-    "127.0.0.1" = [
-      "api.observable.test"
-      "avatars.test"
-      "connector.test"
-      "custom.test"
-      "dispatch.observable.test"
-      "events.observable.test"
-      "job-manager.observable.test"
-      "login.usercontent.test"
-      "login.worker.test"
-      "observable.test"
-      "observablehq.observablecloud.test"
-      "projects.test"
-      "prompts.test"
-      "usercontent.test"
-      "worker.test"
-      "ws.observable.test"
-    ];
+  services.dnsmasq = {
+    enable = true;
+    alwaysKeepRunning = true;
+    resolveLocalQueries = true;
+    settings = {
+      address = ["/test/127.0.0.1"];
+    };
   };
 
   virtualisation.docker.autoPrune.flags = ["--all" "--filter" "label=prune=always"];
