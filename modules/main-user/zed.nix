@@ -60,6 +60,7 @@ in {
       preview_tabs.enabled = false;
       scrollbar.show = "always";
       show_edit_predictions = true;
+      show_whitespaces = "selection";
       theme = {
         mode = "dark";
         light = "One Light";
