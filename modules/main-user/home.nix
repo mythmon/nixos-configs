@@ -116,11 +116,9 @@ in {
         nil
         nixd
         obsidian
-        orca-slicer
         parallel
         pavucontrol
         pwvucontrol
-        prusa-slicer
         ripgrep
         rustup
         sgt-puzzles
