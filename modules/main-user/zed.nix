@@ -10,17 +10,17 @@ in {
 
     package = pkgs.zed-editor.overrideAttrs (
       finalAttrs: prevAttrs: {
-        version = "0.177.2";
+        version = "0.177.7";
         src = prevAttrs.src.override {
           tag = "v${finalAttrs.version}-pre";
-          hash = "sha256-FjOr+5apiv3/9DoHdoaHLBp4RNYqiRj7+BPXfGTDBdM=";
+          hash = "sha256-arO8yz+0jQ6ay+MzKDhIIZ2h1ssOt9ahw2yBu31Ug2Y=";
         };
         postPatch =
           builtins.replaceStrings [prevAttrs.version] [finalAttrs.version]
           prevAttrs.postPatch;
         cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
           inherit (finalAttrs) pname version src;
-          hash = "sha256-zF3BhYbeWh4tkUiQKsrdvK6PDVuGxyHqUUvij5iHjyY=";
+          hash = "sha256-LCGLeVIOWRlcZdcyQ7G9GUre9+dPGlZT6h8maAEyPVY=";
         };
         env =
           prevAttrs.env
