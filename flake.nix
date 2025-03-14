@@ -55,7 +55,7 @@
         ./modules/main-user
         ./modules/1password
         ./modules/roland-bridge-cast
-        ./modules/games/minecraft
+        ./modules/music
         ./modules/games/picotron
         ./modules/games/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
@@ -77,7 +77,6 @@
         ./modules/roland-bridge-cast
         ./modules/observable
         ./modules/1password
-        ./modules/games/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
         nix-index-database.nixosModules.nix-index
         {programs.command-not-found.enable = false;}
