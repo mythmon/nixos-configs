@@ -33,7 +33,7 @@ in {
       firefox = {
         enable = true;
         profiles.default.search = {
-          default = "DuckDuckGo";
+          default = "ddg";
           force = true;
         };
         nativeMessagingHosts = with pkgs; [
