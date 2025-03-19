@@ -20,6 +20,7 @@ in {
 
           export OP_PLUGIN_ALIASES_SOURCED=1
           alias gh="op plugin run -- gh"
+          alias units="echo 'You mean numbat'; and numbat"
         '';
         plugins = [
           {
@@ -115,6 +116,7 @@ in {
         ncdu
         nil
         nixd
+        numbat
         obsidian
         parallel
         pavucontrol
@@ -125,7 +127,6 @@ in {
         signal-desktop
         spotify
         ungoogled-chromium
-        units
         unzip
         usbutils
         vlc
