@@ -12,7 +12,7 @@ boot:
 update:
   nix flake update
   nix flake archive
-  just boot
+  just check
 
 gc:
   sudo nix-store --gc
