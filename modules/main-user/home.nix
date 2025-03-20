@@ -73,7 +73,7 @@ in {
       };
 
       mcfly = {
-        enable = true;
+        enable = false;
         enableFishIntegration = true;
         fzf.enable = true;
       };
