@@ -8,7 +8,7 @@
       follows = "nixos-cosmic/nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/b0152a3531e8dd2ba0808c166386c80cc6ab9692";
       inputs.nixpkgs.follows = "nixos-cosmic/nixpkgs";
     };
     alejandra = {
