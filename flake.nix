@@ -2,11 +2,11 @@
   description = "Mythmon's NixOS configurations";
 
   inputs = {
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
       follows = "nixos-cosmic/nixpkgs";
     };
+    nixpkgs-prusa-2-9-1-pr.url = "github:NixOS/nixpkgs/15fc832bbf4e420f7922e4ddf039eb37d4d570e5";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixos-cosmic/nixpkgs";
@@ -24,16 +24,16 @@
 
   outputs = inputs @ {
     self,
-    nixpkgs-stable,
     nixpkgs,
+    nixpkgs-prusa-2-9-1-pr,
     nixos-cosmic,
     nix-index-database,
     alejandra,
     ...
   }: let
     system = "x86_64-linux";
-    overlay-stable = final: prev: {
-      stable = import nixpkgs-stable {
+    overlay-prusa-2-9-1-pr = final: prev: {
+      prusa-2-9-1-pr = import nixpkgs-prusa-2-9-1-pr {
         inherit system;
         config.allowUnfree = true;
       };
@@ -45,7 +45,7 @@
       inherit system;
       specialArgs = inputs;
       modules = [
-        ({...}: {nixpkgs.overlays = [];})
+        ({...}: {nixpkgs.overlays = [overlay-prusa-2-9-1-pr];})
         ({...}: {nix.settings.substituters = ["https://cache.nixos.org/"];})
         ./hosts/fractal
         ./modules/standard
@@ -68,7 +68,7 @@
       inherit system;
       specialArgs = inputs;
       modules = [
-        ({...}: {nixpkgs.overlays = [overlay-stable];})
+        ({...}: {nixpkgs.overlays = [];})
         ./hosts/graphite
         ./modules/standard
         ./modules/desktops/gnome
