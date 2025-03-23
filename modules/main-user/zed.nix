@@ -1,39 +1,35 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   cfg = config.main-user;
 in {
   home-manager.users.${cfg.userName}.programs.zed-editor = {
     enable = true;
 
-    package = pkgs.zed-editor.overrideAttrs (
-      finalAttrs: prevAttrs: {
-        version = "0.177.7";
-        src = prevAttrs.src.override {
-          tag = "v${finalAttrs.version}-pre";
-          hash = "sha256-arO8yz+0jQ6ay+MzKDhIIZ2h1ssOt9ahw2yBu31Ug2Y=";
-        };
-        postPatch =
-          builtins.replaceStrings [prevAttrs.version] [finalAttrs.version]
-          prevAttrs.postPatch;
-        cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
-          inherit (finalAttrs) pname version src;
-          hash = "sha256-LCGLeVIOWRlcZdcyQ7G9GUre9+dPGlZT6h8maAEyPVY=";
-        };
-        env =
-          prevAttrs.env
-          // {
-            RELEASE_VERSION = finalAttrs.version;
-          };
-        patches = [
-          ./0001-zed-generate-licenses-no-fail.patch
-          ./0002-zed-linux-linker.patch
-          "script/patches/use-cross-platform-livekit.patch"
-        ];
-      }
-    );
+    # package = pkgs.zed-editor.overrideAttrs (
+    #   finalAttrs: prevAttrs: {
+    #     version = "0.177.7";
+    #     src = prevAttrs.src.override {
+    #       tag = "v${finalAttrs.version}-pre";
+    #       hash = "sha256-arO8yz+0jQ6ay+MzKDhIIZ2h1ssOt9ahw2yBu31Ug2Y=";
+    #     };
+    #     postPatch =
+    #       builtins.replaceStrings [prevAttrs.version] [finalAttrs.version]
+    #       prevAttrs.postPatch;
+    #     cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+    #       inherit (finalAttrs) pname version src;
+    #       hash = "sha256-LCGLeVIOWRlcZdcyQ7G9GUre9+dPGlZT6h8maAEyPVY=";
+    #     };
+    #     env =
+    #       prevAttrs.env
+    #       // {
+    #         RELEASE_VERSION = finalAttrs.version;
+    #       };
+    #     patches = [
+    #       ./0001-zed-generate-licenses-no-fail.patch
+    #       ./0002-zed-linux-linker.patch
+    #       "script/patches/use-cross-platform-livekit.patch"
+    #     ];
+    #   }
+    # );
 
     extensions = ["dockerfile" "elixir" "git_firefly" "html" "make" "nix" "sql" "terraform" "toml"];
     userSettings = {
