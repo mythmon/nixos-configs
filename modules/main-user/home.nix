@@ -136,12 +136,12 @@ in {
         jq
         just
         krita
+        moreutils
         ncdu
         nil
         nixd
         numbat
         obsidian
-        parallel
         pavucontrol
         pwvucontrol
         ripgrep
