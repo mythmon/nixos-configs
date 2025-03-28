@@ -134,6 +134,7 @@ in {
         imv
         inkscape
         jq
+        jujutsu
         just
         krita
         moreutils
