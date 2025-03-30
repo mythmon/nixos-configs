@@ -72,6 +72,29 @@ in {
         };
       };
 
+      jujutsu = {
+        enable = true;
+        settings = {
+          git = {
+            sign-on-push = true;
+          };
+          signing = {
+            behavior = "drop";
+            backend = "ssh";
+            key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIbDQ447YU9E/9dGLzcgqXCDpMCxK8Wqt2K9EvapBL/J";
+            backends.ssh.program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+          };
+          ui = {
+            default-command = "log";
+            pager = "less -FRX";
+          };
+          user = {
+            name = "Michael Cooper";
+            email = "mythmon@gmail.com";
+          };
+        };
+      };
+
       mcfly = {
         enable = false;
         enableFishIntegration = true;
@@ -111,7 +134,6 @@ in {
         imv
         inkscape
         jq
-        jujutsu
         just
         krita
         ncdu
