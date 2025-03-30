@@ -111,6 +111,7 @@ in {
         imv
         inkscape
         jq
+        jujutsu
         just
         krita
         ncdu
