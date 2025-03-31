@@ -141,6 +141,7 @@ in {
             format = "[$symbol](blue bold) $output ";
             symbol = "󱗆 ";
             when = "jj root --ignore-working-copy";
+            disabled = true;
           };
         };
       };
