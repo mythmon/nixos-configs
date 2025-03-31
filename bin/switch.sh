@@ -10,14 +10,8 @@ echo "Rebuilding"
 log_file=nixos-switch.log
 sudo nixos-rebuild ${action} --flake '.#' | tee $log_file
 
-# that worked, so now lets commit it
-echo "Comitting"
-dir=$(mktemp -d)
-template="${dir}/commit-message-template"
+# that worked, so now label the current commit via a bookmark
+echo "Bookmarking"
 generation=$(nixos-rebuild list-generations | awk 'NR==2 {print $1}')
-touch "$template"
-echo "$(hostname) gen ${generation} - " > "$template"
-echo Using template "$template"
-
-git commit --allow-empty -av --template="$template"
-rm -r $dir
+bookmark="$(hostname)-${generation}"
+jj bookmark set "$bookmark" --revision=@
