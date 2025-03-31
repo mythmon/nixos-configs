@@ -2,9 +2,33 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: let
   cfg = config.main-user;
+
+  starship-jj = pkgs.rustPlatform.buildRustPackage rec {
+    pname = "starship-jj";
+    version = "0.3.1";
+
+    src = pkgs.fetchgit {
+      url = "https://gitlab.com/lanastara_foss/starship-jj";
+      rev = version;
+      hash = "sha256-6AfadAy9PmJhJsatAQlVb0Fkd7A1sd1rDjFAs5jhmOU=";
+    };
+
+    useFetchCargoVendor = true;
+    cargoHash = "sha256-adho1Zj1xLF6mZWiRY2E0ZiNyw5PDl61xLFQujiR+Rg=";
+    nativeBuildInputs = with pkgs; [pkg-config];
+    buildInputs = with pkgs; [openssl];
+
+    meta = {
+      description = "starship plugin for jj";
+      homepage = "https://gitlab.com/lanastara_foss/starship-jj";
+      license = lib.licenses.mit;
+      maintainers = [];
+    };
+  };
 in {
   home-manager.users.${cfg.userName} = {
     programs = {
@@ -104,6 +128,21 @@ in {
       starship = {
         enable = true;
         enableFishIntegration = true;
+        settings = {
+          git_branch.disabled = true;
+          custom.git_branch = {
+            when = true;
+            command = "jj root --ignore-working-copy > /dev/null 2>&1 || starship module git_branch";
+            description = "Only show git_branch if we're not in a jj repository";
+          };
+
+          custom.jj = {
+            command = "starship-jj --ignore-working-copy starship prompt";
+            format = "[$symbol](blue bold) $output ";
+            symbol = "󱗆 ";
+            when = "jj root --ignore-working-copy";
+          };
+        };
       };
 
       vim = {
@@ -149,6 +188,7 @@ in {
         sgt-puzzles
         signal-desktop
         spotify
+        starship-jj
         ungoogled-chromium
         unzip
         usbutils

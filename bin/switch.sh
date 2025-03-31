@@ -9,6 +9,7 @@ action=$1
 echo "Rebuilding"
 log_file=nixos-switch.log
 sudo nixos-rebuild ${action} --flake '.#' | tee $log_file
+echo
 
 # that worked, so now label the current commit via a bookmark
 echo "Bookmarking"
