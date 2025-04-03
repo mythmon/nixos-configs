@@ -56,6 +56,7 @@
         ./modules/1password
         ./modules/roland-bridge-cast
         ./modules/music
+        ./modules/games/minecraft
         ./modules/games/picotron
         ./modules/games/steam
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}

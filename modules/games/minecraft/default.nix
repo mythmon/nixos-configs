@@ -19,10 +19,10 @@
   };
   ftb-electron = let
     pname = "ftb-electron";
-    version = "1.25.11";
+    version = "1.27.4";
     src = pkgs.fetchurl {
-      url = "https://piston.feed-the-beast.com/app/ftb-app-${version}-x86_64.AppImage";
-      hash = "sha256-mxcqcQA6plQtoKtJ/nIPMRU/iar4pmLGneGE0F/E/fY=";
+      url = "https://piston.feed-the-beast.com/app/ftb-app-linux-${version}-x86_64.AppImage";
+      hash = "sha256-qgFCqPsRPYzTgCfVZNcH3P3IlY02wkeZF9aj3XULFKA=";
     };
     contents = pkgs.appimageTools.extractType2 {inherit pname version src;};
   in
