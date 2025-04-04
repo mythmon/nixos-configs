@@ -18,5 +18,13 @@
     };
   };
 
+  services.incron = {
+    enable = true;
+    systab = ''
+      /home/mythmon/src/observablehq/observablehq/notebook-api/db IN_CREATE,IN_NO_LOOP ${pkgs.coreutils-full}/bin/chown mythmon:users $@/$#
+      /home/mythmon/src/observablehq/observablehq/shared/observablehq-types-db/src IN_CREATE,IN_NO_LOOP ${pkgs.coreutils-full}/bin/chown mythmon:users $@/$#
+    '';
+  };
+
   virtualisation.docker.autoPrune.flags = ["--all" "--filter" "label=prune=always"];
 }
