@@ -1,13 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   cfg = config.main-user;
 in {
   home-manager.users.${cfg.userName}.programs.zed-editor = {
     enable = true;
-    package = pkgs.zed-editor-fhs;
 
     # package = pkgs.zed-editor.overrideAttrs (
     #   finalAttrs: prevAttrs: {
