@@ -48,6 +48,7 @@ in {
       double_click_in_multibuffer = "open";
       features.edit_prediction_provider = "zed";
       format_on_save = "off";
+      hide_mouse_while_typing = false; # this just flashes the cursor when enabled
       languages.Rust.tab_size = 4;
       lsp = {
         nil.autoArchive = true;
