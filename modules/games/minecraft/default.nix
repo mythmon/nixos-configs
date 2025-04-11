@@ -3,20 +3,6 @@
   pkgs,
   ...
 }: let
-  # overlay-atlauncher-steam-run = self: super: {
-  #   atlauncher = super.atlauncher.overrideAttrs (oldAttrs: {
-  #     nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.steam-run];
-  #     desktopItems = [
-  #       (super.makeDesktopItem {
-  #         categories = ["Game"];
-  #         desktopName = "ATLauncher (steam-run)";
-  #         exec = "steam-run atlauncher";
-  #         icon = "atlauncher";
-  #         name = "atlauncher";
-  #       })
-  #     ];
-  #   });
-  # };
   ftb-electron = let
     pname = "ftb-electron";
     version = "1.27.4";
@@ -37,16 +23,11 @@
       '';
     };
 in {
-  # nixpkgs.overlays = [
-  #   overlay-atlauncher-steam-run
-  # ];
   home-manager.users.${config.main-user.userName} = {pkgs, ...}: {
     home = {
       packages = with pkgs; [
-        atlauncher
         ftb-electron
         gdlauncher-carbon
-        prismlauncher
       ];
     };
   };
