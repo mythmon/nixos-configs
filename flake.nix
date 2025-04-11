@@ -20,15 +20,17 @@
       inputs.nixpkgs.follows = "nixos-cosmic/nixpkgs";
     };
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
   };
 
   outputs = inputs @ {
     self,
+    alejandra,
+    nix-index-database,
+    nixos-cosmic,
+    nixos-hardware,
     nixpkgs,
     nixpkgs-prusa-2-9-1-pr,
-    nixos-cosmic,
-    nix-index-database,
-    alejandra,
     ...
   }: let
     system = "x86_64-linux";
@@ -70,6 +72,7 @@
       specialArgs = inputs;
       modules = [
         ({...}: {nixpkgs.overlays = [];})
+        nixos-hardware.nixosModules.framework-12th-gen-intel
         ./hosts/graphite
         ./modules/standard
         ./modules/desktops/gnome
