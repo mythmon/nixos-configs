@@ -60,7 +60,10 @@
   # https://search.nixos.org
   environment.systemPackages = with pkgs; [efibootmgr vim wget keymapp btdu];
 
-  hardware.keyboard.zsa.enable = true;
+  hardware = {
+    keyboard.zsa.enable = true;
+    i2c.enable = true;
+  };
 
   virtualisation.docker = {
     autoPrune.enable = true;

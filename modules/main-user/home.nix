@@ -162,6 +162,9 @@ in {
         alejandra
         btop
         cameractrls-gtk4
+        ddcui
+        ddcutil
+        ddccontrol
         discord
         eza
         fd
