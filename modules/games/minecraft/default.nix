@@ -25,9 +25,11 @@
 in {
   home-manager.users.${config.main-user.userName} = {pkgs, ...}: {
     home = {
-      packages = with pkgs; [
+      packages = [
         ftb-electron
-        gdlauncher-carbon
+        pkgs.gdlauncher-carbon
+        pkgs.libcef
+        pkgs.nss
       ];
     };
   };
