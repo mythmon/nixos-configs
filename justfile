@@ -4,7 +4,7 @@ switch:
 format: fmt
 
 fmt:
-  nix fmt
+  alejandra . 2>/dev/null
 
 boot:
   ./bin/switch.sh boot
