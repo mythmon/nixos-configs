@@ -190,7 +190,7 @@ in {
         ripgrep
         rustup
         sgt-puzzles
-        signal-desktop
+        signal-desktop-bin
         spotify
         starship-jj
         ungoogled-chromium
