@@ -1,4 +1,8 @@
-{config, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.main-user;
 
   defaultSettings = {
@@ -49,7 +53,14 @@
     wrap_guides = [80 100 120];
   };
 
-  defaultSettingsJson = builtins.toJSON defaultSettings;
+  defaultSettingsJson = pkgs.lib.strings.concatStrings [
+    "\n"
+    (builtins.readFile (pkgs.runCommand "pretty-settings.json" {} ''
+      ${pkgs.jq}/bin/jq -S . > $out <<EOF
+      ${builtins.toJSON defaultSettings}
+      EOF
+    ''))
+  ];
 in {
   home-manager.users.${cfg.userName} = {
     programs.zed-editor = {
