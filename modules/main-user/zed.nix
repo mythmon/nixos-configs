@@ -1,10 +1,13 @@
 {
   config,
   pkgs,
+  lib,
+  home-manager,
   ...
 }: let
   cfg = config.main-user;
 
+  # Define default settings for Zed editor
   defaultSettings = {
     assistant = {
       default_model = {
@@ -53,6 +56,7 @@
     wrap_guides = [80 100 120];
   };
 
+  # Pretty-print the JSON for better readability
   defaultSettingsJson = pkgs.lib.strings.concatStrings [
     "\n"
     (builtins.readFile (pkgs.runCommand "pretty-settings.json" {} ''
@@ -61,22 +65,35 @@
       EOF
     ''))
   ];
+
+  # Write settings file to Nix store
+  defaultSettingsFile = pkgs.writeText "zed-default-settings.json" defaultSettingsJson;
 in {
   home-manager.users.${cfg.userName} = {
-    programs.zed-editor = {
-      enable = true;
-      extensions = ["dockerfile" "elixir" "git_firefly" "html" "make" "nix" "sql" "terraform" "toml"];
+    home.packages = [pkgs.zed-editor];
+    # TODO how can we make extensions work in the mutable config approach, or
+    # make the program.zed-editor approach allow mutable configs?
+    # programs.zed-editor = {
+    #   enable = true;
+    #   extensions = ["dockerfile" "elixir" "git_firefly" "html" "make" "nix" "sql" "terraform" "toml"];
+    # };
+
+    # Always keep the immutable reference file up-to-date
+    xdg.configFile."zed/settings-default.json" = {
+      source = defaultSettingsFile;
+      force = true;
     };
 
-    xdg.configFile = {
-      "zed/settings.json" = {
-        force = false;
-        text = defaultSettingsJson;
-      };
-      "zed/settings-default.json" = {
-        text = defaultSettingsJson;
-        force = true;
-      };
-    };
+    # Add conditional file creation for mutable settings
+    home.activation.zedInitialSettings = home-manager.lib.hm.dag.entryAfter ["writeBoundary"] ''
+      # Create Zed config directory if it doesn't exist
+      run mkdir -p "$HOME/.config/zed"
+
+      # Only create settings.json if it doesn't exist yet
+      if [ ! -f "$HOME/.config/zed/settings.json" ]; then
+        run cp -L ${defaultSettingsFile} "$HOME/.config/zed/settings.json"
+        echo "Created initial Zed settings.json"
+      fi
+    '';
   };
 }
