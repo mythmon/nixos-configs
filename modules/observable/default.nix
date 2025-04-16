@@ -6,9 +6,11 @@
   environment.systemPackages = with pkgs; [
     beekeeper-studio
     google-chrome
-    rambox
     heroku
+    k3d
+    kubectl
     postgresql_17_jit
+    rambox
   ];
 
   services.dnsmasq = {
