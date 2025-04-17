@@ -166,6 +166,7 @@ in {
         vlc
         watchexec
         zip
+        zoom
       ];
       sessionVariables = {
         EDITOR = "vim";
