@@ -15,4 +15,4 @@ echo
 echo "Bookmarking"
 generation=$(nixos-rebuild list-generations | awk 'NR==2 {print $1}')
 bookmark="$(hostname)-${generation}"
-jj bookmark set "$bookmark" --revision=@
+jj bookmark set "$bookmark" --revision='latest(ancestors(@) & ~empty())'
