@@ -12,7 +12,7 @@
     assistant = {
       default_model = {
         provider = "zed.dev";
-        model = "claude-3-5-sonnet-latest";
+        model = "claude-3-7-sonnet-thinking-latest";
       };
       version = "2";
     };
@@ -24,8 +24,11 @@
     double_click_in_multibuffer = "open";
     features.edit_prediction_provider = "zed";
     format_on_save = "off";
-    hide_mouse_while_typing = false; # this just flashes the cursor when enabled
-    languages.Rust.tab_size = 4;
+    hide_mouse = "never";
+    languages = {
+      Rust.tab_size = 4;
+      Python.tab_size = 4;
+    };
     lsp = {
       nil.autoArchive = true;
       rust-analyzer.binary.path_lookup = true;
